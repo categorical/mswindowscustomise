@@ -2,8 +2,10 @@
 
 progdir="/cygdrive/d/programs"
 readonly bindir="/cygdrive/d/bin"
+maintenancedir="/cygdrive/d/dev/mswindowscustomise/patches"
 optdir="/cygdrive/d/redev"
-maintenancedir="/cygdrive/d/dev/mswindowscustomise"
+devdir="/cygdrive/d/dev"
+
 
 function _2bin(){
 	local -r f=$1
@@ -33,6 +35,10 @@ _2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 _2bin "$maintenancedir/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/virtualenv.sh" "$bindir/virtualenv"
+
+
+
+_2bin "$devdir/githubrepositories/gitapi"
 
 }
 

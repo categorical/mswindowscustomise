@@ -1,4 +1,3 @@
-
 If Not WScript.Arguments.Named.Exists("elevated") Then
     CreateObject("Shell.Application").ShellExecute _
         "wscript.exe", _
