@@ -1,0 +1,5 @@
+#/bin/bash
+
+printf "0x$1 = \e[34m%d\e[0m\n" $((0x$1))
+
+

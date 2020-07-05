@@ -27,10 +27,14 @@ _2bin "$maintenancedir/xps/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/xps/patches/virtualenv.sh" "$bindir/virtualenv"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
+_2bin "$maintenancedir/xps/misc/hex2dec"
 
 
 
 _2bin "$devdir/githubrepositories/gitapi"
+_2bin "$devdir/windowsvolumeosd/build/install/windowsvolumeosd/bin/windowsvolumeosd"
+
+
 
 }
 
