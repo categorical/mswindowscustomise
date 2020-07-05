@@ -2,7 +2,7 @@
 
 progdir="/cygdrive/d/programs"
 readonly bindir="/cygdrive/d/bin"
-maintenancedir="/cygdrive/d/dev/mswindowscustomise/patches"
+maintenancedir="/cygdrive/d/dev/mswindowscustomise"
 optdir="/cygdrive/d/redev"
 devdir="/cygdrive/d/dev"
 
@@ -32,9 +32,11 @@ _2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdir/python3/scripts/pip.exe"
 _2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 
-_2bin "$maintenancedir/scriptruby.sh" "$bindir/ruby"
-_2bin "$maintenancedir/scriptpython.sh" "$bindir/python"
-_2bin "$maintenancedir/virtualenv.sh" "$bindir/virtualenv"
+_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
+_2bin "$maintenancedir/patches/scriptpython.sh" "$bindir/python"
+_2bin "$maintenancedir/patches/virtualenv.sh" "$bindir/virtualenv"
+
+_2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 
 
 

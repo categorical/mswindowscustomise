@@ -10,3 +10,5 @@ reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragHeight /d 120 /f
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragWidth /d 120 /f
 
 
+
+
