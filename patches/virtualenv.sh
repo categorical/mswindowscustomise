@@ -23,9 +23,12 @@ _amendactivate(){
     sed -i "/$l1/a$p2" "$f"
 
     local l2='export VIRTUAL_ENV';l2=$(_esed "$l2")
+    local p4='[ -d "$VIRTUAL_ENV" ]||return 1';p4=$(_esed "$p4")
+    sed -i "/$l2/i$p4" "$f"
     local p3='VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")';p3=$(_esed "$p3")
     sed -i "/$l2/i$p3" "$f"
-
+     
+    sed -i '$awhich python' "$f"
      
 }
 _amendps1(){
