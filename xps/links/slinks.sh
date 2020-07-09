@@ -1,11 +1,11 @@
 #/bin/bash
 
-progdir='/cygdrive/d/Program Files'
+progdirw='/cygdrive/d/Program Files'
 readonly bindir='/cygdrive/d/dev/bin'
 maintenancedir='/cygdrive/d/dev/mswindowscustomise'
 optdir='/cygdrive/d/redev'
 devdir='/cygdrive/d/dev'
-
+progdir='/cygdrive/d/programs'
 
 function _2bin(){
 	local -r f=$1
@@ -20,11 +20,18 @@ function _bindir(){
 function _update(){
     _bindir
 
-_2bin "$progdir/Python/Python36/python.exe" "$bindir/pythonwin.exe"
-_2bin "$progdir/Python/Python36/Scripts/pip.exe"
-_2bin "$progdir/Python/Python36/Scripts/virtualenv.exe" "$bindir/virtualenvwin"
+_2bin "$progdirw/Python/Python36/python.exe" "$bindir/pythonwin.exe"
+_2bin "$progdirw/Python/Python36/Scripts/pip.exe"
+_2bin "$progdirw/Python/Python36/Scripts/virtualenv.exe" "$bindir/virtualenvwin"
 _2bin "$maintenancedir/xps/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/xps/patches/virtualenv.sh" "$bindir/virtualenv"
+
+_2bin "$progdir/ruby/bin/ruby.exe" "$bindir/rubywin.exe"
+_2bin "$progdir/ruby/bin/gem.cmd" "$bindir/gem"
+_2bin "$progdir/ruby/bin/bundle.cmd" "$bindir/bundle"
+_2bin "$progdir/ruby/bin/ridk.cmd" "$bindir/ridk"
+_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
+
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 _2bin "$maintenancedir/xps/misc/hex2dec"
