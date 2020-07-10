@@ -1,3 +1,4 @@
+'Stop Vindorus 10 deleteing files.
 
 If Not WScript.Arguments.Named.Exists("elevated") Then
     CreateObject("Shell.Application").ShellExecute _
