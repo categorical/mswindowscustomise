@@ -21,13 +21,28 @@ s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Program
 
 
 
-'s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder\Attributes","0xb094010c"
-s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder\Attributes",&Ha9400100&,"REG_DWORD"
-'s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder\Attributes","0xb080010d"
-'Restores defaults
-'s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder\Attributes","0xb094010c"
-'s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder\Attributes","0xa0900100"
-'s.RegWrite "HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder\Attributes","0xb080010d"
+Set fso=CreateObject("Scripting.FileSystemObject")
+
+scriptdir=fso.GetParentFolderName(fso.GetFile(WScript.ScriptFullName))
+fregini=scriptdir & "\permsregini":If fso.FileExists(fregini) Then
+    s.Run "regini.exe " & chr(34) & fregini &chr(34),0,True
+End If
+
+
+'Shows/hides items at explorer naviation pane.
+'libraries
+
+'s.RegWrite "HKCR\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder\Attributes",&Hb080010d&,"REG_DWORD"
+s.RegWrite "HKCR\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder\Attributes",&Hb090010d&,"REG_DWORD"
+
+'favourites
+s.RegWrite "HKCR\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder\Attributes",&Ha0900100&,"REG_DWORD"
+'s.RegWrite "HKCR\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder\Attributes",&Ha9400100&,"REG_DWORD"
+
+'homegroup
+'s.RegWrite "HKCR\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder\Attributes",&Hb084010c&,"REG_DWORD"
+s.RegWrite "HKCR\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder\Attributes",&Hb094010c&,"REG_DWORD"
+
 
 
 
