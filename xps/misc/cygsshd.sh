@@ -1,16 +1,24 @@
 #/bin/bash
 
+thisdir=$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)
+# Writes $HOME to nsswitch.conf,
+# otherwise ssh and sshd look for files in /home/$USER/.ssh which does not exist,
+# and when logged on, bash even copies skeleton files .bashrc, etc to /home/$USER,
+# thinking that is the home directory.
+"$thisdir/sethome.sh"
+
+# Removes dodgy Windows OpenSSH service.
 sc query sshd
-sc delete sshd
+sudo sc delete sshd
 
-net stop cygsshd
+# Removes Cygwin OpenSSH service.
+sudo net stop cygsshd
 sc query cygsshd
-sc delete cygsshd
+sudo sc delete cygsshd
 
-
-ssh-host-config --yes
-net start cygsshd
-
+ps|grep ssh|awk '{print $1}'|xargs kill -9
+sudo bash --login -c "'"ssh-host-config --yes"'"
+sudo net start cygsshd
 
 #ssh-host-config asks less questions with Cygwin 2.905 then before.
 #Questions asked:

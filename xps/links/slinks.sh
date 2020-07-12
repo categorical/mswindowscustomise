@@ -35,6 +35,9 @@ _2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 _2bin "$maintenancedir/xps/misc/hex2dec"
+_2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
+
+
 
 
 
