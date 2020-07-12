@@ -7,7 +7,7 @@ thisdir=$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)
 # thinking that is the home directory.
 "$thisdir/sethome.sh"
 
-# Removes dodgy Windows OpenSSH service.
+# Removes Windows OpenSSH service.
 sc query sshd
 sudo sc delete sshd
 
