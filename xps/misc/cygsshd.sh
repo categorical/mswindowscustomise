@@ -17,7 +17,7 @@ sc query cygsshd
 sudo sc delete cygsshd
 
 ps|grep ssh|awk '{print $1}'|xargs kill -9
-sudo bash --login -c "'"ssh-host-config --yes"'"
+sudo ssh-host-config --yes
 sudo net start cygsshd
 
 #ssh-host-config asks less questions with Cygwin 2.905 then before.
