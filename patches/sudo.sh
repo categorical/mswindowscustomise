@@ -12,24 +12,29 @@ _e3(){
 _quote(){
     printf '%s' "$1"|sed $'s/\'/\'\\\\\'\'/g;s/\(.*\)/\'\\1\'/'
 }
-
-
+x=\'\ \'
+d=
 for arg;do
     set -- "$@" "$(_quote "$arg")"
+    d+="$(_quote "$arg")$x"
     shift
+    :
 done
-
-
+d=${d%"$x"}
 echo "$*"
-a="$* && sleep 1"
-b="$(_quote "$a")"
-c=\""$a"\"
+echo "d: $d"
+a="$d$x&&${x}sleep${x}1"
+#b="$(_quote "$a")"
+#c=\""$a"\"
 echo "a: $a"
-echo "b: $b"
-echo "c: $c"
+#echo "b: $b"
+#echo "c: $c"
+
+
 #bash -c "echo $a"
-bash -c "echo $b"
-bash -c "echo $c"
+#bash -c "echo $b"
+#bash -c "echo $c"
+#bash -c "$a"
 #bash -c "$b"
 
 #cygstart --action=runas --wait \
@@ -40,7 +45,7 @@ echo 222
 #cygstart --wait cmd /c "echo $c"
 
 cygstart --wait \
-    bash --login -c "$c"
+    bash --login -c "$a"
 
 
 
