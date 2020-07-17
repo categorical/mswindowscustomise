@@ -2,50 +2,43 @@
 
 
  
-_e(){
-    printf '%s' "$1"|sed 's/[\]/\\&/g'
-}
-_e3(){
-    printf '%s' "$(_e "$(_e "$(_e "$1")")")"
-}
-
+# 1. Escapes every ': \'
+# 2. single quotes every remaining substring.
+# 
 _quote(){
     printf '%s' "$1"|sed $'s/\'/\'\\\\\'\'/g;s/\(.*\)/\'\\1\'/'
 }
-x=\'\ \'
-d=
+
+# Escaping every character does not work right.
+_escape(){
+    printf '%s' "$1"|sed 's/\(.\)/\\\1/g'
+}
+
+# 1. Escapes any " by another ": "",
+# 2. then double quotes the whole string.
+# It seems that in 2 an opening double quote works alone, even without an ending quote.
+# I think cmd passes everything as it is to bash, except escaped double quotes,
+# then bash.exe makes an extra step of sanitising the input before evaluation.
+_doublequote(){
+    printf '%s' "$1"|sed 's/"/""/g;s/\(.*\)/"\1/'
+}
+    
+
+# Single quotes every argument.
 for arg;do
     set -- "$@" "$(_quote "$arg")"
-    d+="$(_quote "$arg")$x"
     shift
     :
 done
-d=${d%"$x"}
-echo "$*"
-echo "d: $d"
-a="$d$x&&${x}sleep${x}1"
-#b="$(_quote "$a")"
-#c=\""$a"\"
-echo "a: $a"
-#echo "b: $b"
-#echo "c: $c"
 
+args="$*"
+#args+=';sleep 1'
+args="$(_doublequote "$args")"
+#echo "$args"
 
-#bash -c "echo $a"
-#bash -c "echo $b"
-#bash -c "echo $c"
-#bash -c "$a"
-#bash -c "$b"
+cygstart --action=runas --wait \
+    bash --login -c "$args"
 
-#cygstart --action=runas --wait \
-#    bash --login -c "'""$(_e "$*")""'"
-#cygstart --wait cmd /c "echo $b"
-echo 222
-
-#cygstart --wait cmd /c "echo $c"
-
-cygstart --wait \
-    bash --login -c "$a"
 
 
 
