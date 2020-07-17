@@ -37,10 +37,12 @@ _2bin "$maintenancedir/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/patches/virtualenv.sh" "$bindir/virtualenv"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
+_2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
 
 
 
 _2bin "$devdir/githubrepositories/gitapi"
+_2bin "$optdir/installyoutubedl/dltube"
 
 }
 
