@@ -43,6 +43,7 @@ _2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 _2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
+_2bin "$maintenancedir/xps/misc/hex2dec"
 
 
 
