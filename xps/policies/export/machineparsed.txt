@@ -1,0 +1,87 @@
+; ----------------------------------------------------------------------
+; PARSING Computer POLICY
+; Source file:  D:\dev\mswindowscustomise\xps\policies\export\{4E9BC06A-4CAE-4814-A11D-B6964EE96447}\DomainSysvol\GPO\Machine\registry.pol
+
+Computer
+Software\Policies\Microsoft\Windows\System
+EnableMmx
+DWORD:0
+
+Computer
+Software\Policies\Microsoft\Windows\Windows Search
+AllowCortana
+DWORD:0
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+NoAutoUpdate
+DWORD:1
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+AUOptions
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+AutomaticMaintenanceEnabled
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallDay
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallTime
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallEveryWeek
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallFirstWeek
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallSecondWeek
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallThirdWeek
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+ScheduledInstallFourthWeek
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WindowsUpdate\AU
+AllowMUUpdateService
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows Defender
+DisableAntiSpyware
+DWORD:1
+
+Computer
+Software\Policies\Microsoft\Windows Defender
+DisableRoutinelyTakingAction
+DWORD:1
+
+Computer
+Software\Policies\Microsoft\Windows Defender Security Center\Device performance and health
+UILockdown
+DWORD:1
+
+; PARSING COMPLETED.
+; ----------------------------------------------------------------------
+

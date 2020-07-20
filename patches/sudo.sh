@@ -32,7 +32,7 @@ for arg;do
 done
 
 args="$*"
-#args+=';sleep 2'
+#args+=';sleep 60'
 args="$(_doublequote "$args")"
 #echo "$args"
 
