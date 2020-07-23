@@ -20,6 +20,7 @@ function _bindir(){
 function _update(){
     _bindir
 
+_2bin "$progdirw/7-Zip/7z.exe"
 _2bin "$progdirw/Python/Python36/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdirw/Python/Python36/Scripts/pip.exe"
 _2bin "$progdirw/Python/Python36/Scripts/virtualenv.exe" "$bindir/virtualenvwin"
