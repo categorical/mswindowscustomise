@@ -20,6 +20,7 @@ function _bindir(){
 function _update(){
     _bindir
 
+_2bin "$progdir/7zip/7z.exe"
 _2bin "$progdir/ruby/bin/ruby.exe" "$bindir/rubywin.exe"
 _2bin "$progdir/ruby/bin/gem.cmd" "$bindir/gem"
 _2bin "$progdir/ruby/bin/bundle.cmd" "$bindir/bundle"
