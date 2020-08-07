@@ -26,6 +26,8 @@ _2bin "$progdirw/Python/Python36/Scripts/pip.exe"
 _2bin "$progdirw/Python/Python36/Scripts/virtualenv.exe" "$bindir/virtualenvwin"
 _2bin "$maintenancedir/xps/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/xps/patches/virtualenv.sh" "$bindir/virtualenv"
+_2bin "$progdirw/Gradle/gradle-6.5.1/bin/gradle"
+_2bin "$progdirw/VideoLAN/VLC/vlc.exe"
 
 _2bin "$progdir/ruby/bin/ruby.exe" "$bindir/rubywin.exe"
 _2bin "$progdir/ruby/bin/gem.cmd" "$bindir/gem"
