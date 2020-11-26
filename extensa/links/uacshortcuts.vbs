@@ -45,8 +45,10 @@ searchable(progdir & "emacs\bin\runemacs.exe")
 searchable(progdir & "mozillafirefox\firefox.exe")
 searchable(progdir & "regfromapp\regfromapp.exe")
 searchable(progdir & "sharpkeys\sharpkeys.exe")
+searchable(progdir & "wireshark\wireshark.exe")
 
 
+searchablenargs progdir & "vscode\code.exe","code",""
 'searchablenargs progdir & "opera\launcher.exe","operanoupdate","--disable-update"
 
 
