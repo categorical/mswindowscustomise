@@ -14,6 +14,11 @@ Set s=CreateObject("WScript.Shell")
 
 s.RegWrite "HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy","RemoteSigned"
 
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoStartMenuMorePrograms",1,"REG_DWORD"
+
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoTrayItemsDisplay",1,"REG_DWORD"
+s.RegWrite "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSecondsInSystemClock",1,"REG_DWORD"
+
 
 
 's.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\programs\npp-6.8.8\notepad++.exe %1"
