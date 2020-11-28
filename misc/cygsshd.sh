@@ -1,6 +1,6 @@
 #/bin/bash
 
-Installs sshd and requires openssh of cygwin.
+# Installs sshd and requires openssh of cygwin.
 
 
 thisdir=$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)

@@ -26,17 +26,41 @@ s.RegWrite "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Sho
 's.RegWrite "HKEY_CLASSES_ROOT\cmdfile\shell\edit\command\","D:\programs\npp\notepad++.exe %1"
 
 
-'s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
-'s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir","d:\rubbish"
+s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
+s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir","d:\rubbish"
 
 
 
-'Set fso=CreateObject("Scripting.FileSystemObject")
 
-'scriptdir=fso.GetParentFolderName(fso.GetFile(WScript.ScriptFullName))
-'fregini=scriptdir & "\permsregini":If fso.FileExists(fregini) Then
-'    s.Run "regini.exe " & chr(34) & fregini &chr(34),0,True
-'End If
+'Discards items from This PC.
+'documents
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag\ThisPCPolicy","Hide"
+
+'pictures
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag\ThisPCPolicy","Hide"
+
+'videos
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag\ThisPCPolicy","Hide"
+
+'downloads
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag\ThisPCPolicy","Hide"
+
+'music
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag\ThisPCPolicy","Hide"
+
+'desktop
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\PropertyBag\ThisPCPolicy","Hide"
+
+
+
+
+
+Set fso=CreateObject("Scripting.FileSystemObject")
+
+scriptdir=fso.GetParentFolderName(fso.GetFile(WScript.ScriptFullName))
+fregini=scriptdir & "\permsregini":If fso.FileExists(fregini) Then
+    s.Run "regini.exe " & chr(34) & fregini &chr(34),0,True
+End If
 
 
 'Shows/hides items at explorer naviation pane.
