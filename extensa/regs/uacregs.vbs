@@ -56,6 +56,10 @@ s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescri
 
 'onedrive
 s.RegWrite "HKCR\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}\System.IsPinnedToNameSpaceTree",0,"REG_DWORD"
+s.RegWrite "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search\AllowCortana",0,"REG_DWORD"
+
+
+s.RegWrite "HKLM\System\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal",1,"REG_DWORD"
 
 
 Set fso=CreateObject("Scripting.FileSystemObject")
