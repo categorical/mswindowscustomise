@@ -35,6 +35,7 @@ _2bin "$progdir/emacs/bin/emacs.exe"
 #_2bin "$progdir/jdk/bin/javac.exe"
 #_2bin "$progdir/jdk/bin/jmap.exe"
 _2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
+_2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"

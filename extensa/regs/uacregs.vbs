@@ -28,6 +28,10 @@ s.RegWrite "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Sho
 
 s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
 s.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir","d:\rubbish"
+'s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","C:\Program Files (x86)"
+'s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir","C:\Program Files"
+
+
 
 
 
