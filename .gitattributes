@@ -1,7 +1,12 @@
 
 
-text=auto
+text=auto 
 
 *.sh -crlf
 hex2dec -crlf
+*.* text eol=lf
+
+
+
+
 

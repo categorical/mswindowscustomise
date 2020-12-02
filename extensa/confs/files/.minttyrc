@@ -1,0 +1,17 @@
+Font=Fixedsys
+ClipShortcuts=no
+WindowShortcuts=no
+SwitchShortcuts=no
+ZoomShortcuts=no
+AltFnShortcuts=no
+MiddleClickAction=void
+ClickTargetMod=off
+ClearSelectionOnInput=no
+CopyOnSelect=no
+CopyAsRTF=no
+Columns=120
+Rows=30
+Scrollbar=none
+ScrollMod=off
+Transparency=high
+CursorBlinks=no
