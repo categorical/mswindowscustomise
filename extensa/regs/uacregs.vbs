@@ -75,6 +75,15 @@ fregini=scriptdir & "\permsregini":If fso.FileExists(fregini) Then
 End If
 
 
+'Removes from context menu after installing optical salon build tools.
+On Error Resume Next
+'Are there more?
+s.RegDelete "HKCR\Directory\Background\shell\AnyCode\command\"
+s.RegDelete "HKCR\Directory\Background\shell\AnyCode\"
+s.RegDelete "HKCR\Directory\shell\AnyCode\command\"
+s.RegDelete "HKCR\Directory\shell\AnyCode\"
+On Error GoTo 0
+
 'Shows/hides items at explorer naviation pane.
 'libraries
 
