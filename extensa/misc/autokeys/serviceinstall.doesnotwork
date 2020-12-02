@@ -1,0 +1,20 @@
+#!/bin/bash
+# Does not work, because run as local service,
+# and did not make it to run as user.
+
+progdir='D:\programs'
+nssm=$(cygpath -u "$progdir\nssm\win64\nssm.exe")
+maintenancedir='D:\dev\mswindowscustomise'
+
+nameprefix='nssm:'
+
+#service
+name='ahk';name="$nameprefix$name"
+executable="$progdir\autohotkey\autohotkeyu64.exe"
+args=("$maintenancedir\extensa\misc\ahk.ahk")
+#sudo net stop "$name"
+#sudo sc delete "$name"
+#sudo "$nssm" install "$name" "$executable" "${args[@]}"
+#sudo "$nssm" start "$name"
+#ecivres
+

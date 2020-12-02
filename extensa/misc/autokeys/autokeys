@@ -1,0 +1,14 @@
+
+#NoTrayIcon
+
+
+SetCapsLockState,Alwaysoff
+
+CapsLock::Send,{Ctrl down}{Shift down}{Shift up}{Ctrl up}
+
+
+#x::ExitApp
+
+
+
+

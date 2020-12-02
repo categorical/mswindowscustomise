@@ -34,10 +34,11 @@ _2bin "$progdir/emacs/bin/emacs.exe"
 #_2bin "$progdir/jdk/bin/java.exe"
 #_2bin "$progdir/jdk/bin/javac.exe"
 #_2bin "$progdir/jdk/bin/jmap.exe"
+#_2bin "$progdir/autohotkey/autohotkeyu64.exe" "$bindir/ahk"
+#_2bin "$progdir/nssm/win64/nssm.exe" "$bindir/nssm"
 _2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
-
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 #_2bin "$maintenancedir/patches/scriptpython.sh" "$bindir/python"
