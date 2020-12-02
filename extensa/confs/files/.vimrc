@@ -16,3 +16,8 @@ set nu
 nmap <c-h> <c-w>h<c-w><bar>
 nmap <c-l> <c-w>l<c-w><bar>
 
+
+
+colorscheme slate
+
+
