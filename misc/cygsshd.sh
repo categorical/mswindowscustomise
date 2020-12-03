@@ -3,6 +3,12 @@
 # Installs sshd and requires openssh of cygwin.
 
 
+# n.b. the default sshd_config file works fine,
+# but mind the permissions of .ssh in case of server rejecting a key.
+# cygcheck -c openssh
+# ssh -v lo
+#
+
 thisdir=$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)
 # Writes $HOME to nsswitch.conf,
 # otherwise ssh and sshd look for files in /home/$USER/.ssh which does not exist,

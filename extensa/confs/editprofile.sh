@@ -26,7 +26,8 @@ _alias(){
 }
 
 _alias "grep='grep --color'"
-_alias "ls='ls -FG --color=auto'" 
+#_alias "ls='ls -FG --color=auto'" 
+_alias "ls='ls -F --color=auto'" 
 _alias "mintty='mintty -'"
 
 
