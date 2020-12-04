@@ -4,7 +4,7 @@
 
 SetCapsLockState,Alwaysoff
 
-CapsLock::Send,{Ctrl down}{Shift down}{Shift up}{Ctrl up}
+CapsLock::Send,{LAlt down}{Shift down}{Shift up}{LAlt up}
 
 
 #x::ExitApp
