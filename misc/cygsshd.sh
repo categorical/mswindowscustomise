@@ -4,7 +4,7 @@
 
 
 # n.b. the default sshd_config file works fine,
-# but mind the permissions of .ssh in case of server rejecting a key.
+# but mind the permissions of .ssh (and $HOME) in case of server rejecting a key.
 # cygcheck -c openssh
 # ssh -v lo
 #
