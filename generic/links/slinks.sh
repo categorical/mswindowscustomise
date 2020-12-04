@@ -2,7 +2,7 @@
 
 progdir="/cygdrive/d/programs"
 readonly bindir="/cygdrive/d/bin"
-maintenancedir="/cygdrive/d/dev/mswindowscustomise"
+maintenancedir="/cygdrive/d/zdev/mswindowscustomise"
 optdir="/cygdrive/d/redev"
 devdir="/cygdrive/d/dev"
 
@@ -36,18 +36,18 @@ _2bin "$progdir/python3/scripts/pip.exe"
 #_2bin "$progdir/jdk/bin/jmap.exe"
 #_2bin "$progdir/autohotkey/autohotkeyu64.exe" "$bindir/ahk"
 #_2bin "$progdir/nssm/win64/nssm.exe" "$bindir/nssm"
-_2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
-_2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
-_2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
+#_2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
+_2bin "$maintenancedir/generic/misc/edithosts.sh" "$bindir/hosts"
+#_2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
-_2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
-_2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
+_2bin "$maintenancedir/generic/patches/scriptpython.sh" "$bindir/python"
+_2bin "$maintenancedir/generic/patches/virtualenv.sh" "$bindir/virtualenv"
 #_2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 _2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
-_2bin "$maintenancedir/xps/misc/hex2dec"
+_2bin "$maintenancedir/generic/misc/hex2dec"
 
 
 
