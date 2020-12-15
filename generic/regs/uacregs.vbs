@@ -25,6 +25,7 @@ s.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\programs\npp\note
 s.RegWrite "HKEY_CLASSES_ROOT\VBSFile\Shell\Edit\Command\","D:\programs\npp\notepad++.exe ""%1"""
 s.RegWrite "HKEY_CLASSES_ROOT\cmdfile\shell\edit\command\","D:\programs\npp\notepad++.exe ""%1"""
 s.RegWrite "HKCR\Microsoft.PowerShellScript.1\Shell\Edit\Command\","D:\programs\npp\notepad++.exe ""%1"""
+s.RegWrite "HKEY_CLASSES_ROOT\xmlfile\shell\edit\command\","D:\programs\npp\notepad++.exe ""%1"""
 
 
 's.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
@@ -56,6 +57,15 @@ s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescri
 'desktop
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\PropertyBag\ThisPCPolicy","Hide"
 
+'3d
+On Error Resume Next
+s.RegDelete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}\"
+s.RegDelete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}\"
+On Error GoTo 0
+
+
+
+
 
 
 
@@ -84,6 +94,17 @@ s.RegDelete "HKCR\Directory\Background\shell\AnyCode\"
 s.RegDelete "HKCR\Directory\shell\AnyCode\command\"
 s.RegDelete "HKCR\Directory\shell\AnyCode\"
 On Error GoTo 0
+
+'Removes from context menu after installing microsoft's office (shared folder synchronisation).
+On Error Resume Next
+s.RegDelete "HKCR\CLSID\{6C467336-8281-4E60-8204-430CED96822D}\InprocServer32\"
+s.RegDelete "HKCR\CLSID\{6C467336-8281-4E60-8204-430CED96822D}\ShellEx\MayChangeDefaultMenu\"
+s.RegDelete "HKCR\CLSID\{6C467336-8281-4E60-8204-430CED96822D}\ShellEx\"
+s.RegDelete "HKCR\CLSID\{6C467336-8281-4E60-8204-430CED96822D}\"
+On Error GoTo 0
+
+
+
 
 'Shows/hides items at explorer naviation pane.
 'libraries

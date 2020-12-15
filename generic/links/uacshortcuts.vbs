@@ -19,7 +19,6 @@ Set fso=CreateObject("Scripting.FileSystemObject")
 progdir="D:\programs\"
 searchdir=s.SpecialFolders("AllUsersPrograms") & "\_search\"
 
-
 Function link(f,d,n,args)
     If fso.FileExists(f) Then
         If Len(n)=0 Then n=fso.GetBaseName(f) End If
@@ -38,21 +37,24 @@ Function searchable(i)
 End Function
 
 
+
+
 'searchable(progdir & "vlc\vlc.exe")
-'searchable(progdir & "deluge\deluge.exe")
+searchable(progdir & "deluge\deluge.exe")
 searchable(progdir & "npp\notepad++.exe")
 searchable(progdir & "emacs\bin\runemacs.exe")
 searchable(progdir & "mozillafirefox\firefox.exe")
 searchable(progdir & "regfromapp\regfromapp.exe")
 searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
+searchable(progdir & "winspy\winspy.exe")
 
 
+searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
 searchablenargs progdir & "vscode\code.exe","code",""
+searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
+    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%fooproxy%")&chr(34)
 'searchablenargs progdir & "opera\launcher.exe","operanoupdate","--disable-update"
-
-
-
 
 
 
