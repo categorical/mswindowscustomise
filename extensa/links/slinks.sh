@@ -39,6 +39,7 @@ _2bin "$progdir/python3/scripts/pip.exe"
 _2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
+_2bin "$maintenancedir/extensa/misc/autokeys/autokeys.cmd" "$bindir/autokeys"
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
