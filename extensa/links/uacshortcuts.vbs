@@ -46,6 +46,7 @@ searchable(progdir & "mozillafirefox\firefox.exe")
 searchable(progdir & "regfromapp\regfromapp.exe")
 searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
+searchable(progdir & "moninfo\moninfo.exe")
 
 
 searchablenargs progdir & "vscode\code.exe","code",""

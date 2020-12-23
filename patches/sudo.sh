@@ -31,7 +31,8 @@ for arg;do
     :
 done
 
-args="$*"
+args="cd $(pwd)"
+args+=";$*"
 args+=';sleep 60'
 args="$(_doublequote "$args")"
 #echo "$args"
