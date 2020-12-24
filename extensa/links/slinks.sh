@@ -30,6 +30,7 @@ _2bin "$progdir/portablegit/bin/git.exe"
 _2bin "$progdir/emacs/bin/emacs.exe"
 _2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdir/python3/scripts/pip.exe"
+_2bin "$progdir/vlc/vlc.exe"
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
 #_2bin "$progdir/jdk/bin/javac.exe"
@@ -44,6 +45,7 @@ _2bin "$maintenancedir/extensa/misc/autokeys/autokeys.cmd" "$bindir/autokeys"
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
+_2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
 #_2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
@@ -53,7 +55,7 @@ _2bin "$maintenancedir/xps/misc/hex2dec"
 
 
 #_2bin "$devdir/githubrepositories/gitapi"
-#_2bin "$optdir/installyoutubedl/dltube"
+_2bin "$optdir/installyoutubedl/dltube"
 
 }
 
