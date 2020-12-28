@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-_include=('*.bat' '*.sh')
+_include=('*.bat' '*.sh' '*.py')
 
 _find(){
     local names v
@@ -16,20 +16,26 @@ _find(){
     eval find '"$1"' -type f "$names" -print0
 }
 
-_run(){
+_lf(){
     [ -e "$1" ]||exit 1
     _find "$1"|xargs -0 -I{} bash -c "printf '%s\n' {};sed -i {} -e 's/\$//g'"
+}
+_crlf(){
+    [ -e "$1" ]||exit 1
+    _find "$1"|xargs -0 -I{} bash -c "printf '%s\n' {};sed -i {} -e 's/\$//g'"
 }
 
 _usage(){
     cat<<-EOF
 	SYNOPSIS:
-	    $0 FILE|DIRECTORY
+	    $0 --lf     FILE|DIRECTORY
+	    $0 --crlf   FILE|DIRECTORY
 	EOF
 }
 
-case "$1" in
-    -h|--help)_usage;;
-    *)_run "$1";;
+case "${1}" in
+    --lf)_lf "$2";;
+    --crlf)_crlf "$2";;
+    *)_usage;;
 esac
 
