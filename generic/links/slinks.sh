@@ -44,6 +44,8 @@ _2bin 'C:\Program Files (x86)\Microsoft Office\Office14\excel.exe'
 _2bin "$maintenancedir/generic/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/generic/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/generic/misc/rubbish.sh" "$bindir/rubbish"
+_2bin "$maintenancedir/generic/misc/crlf.sh" "$bindir/crlf"
+_2bin "$maintenancedir/generic/patches/msvc.sh" "$bindir/msvc"
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/generic/patches/scriptpython.sh" "$bindir/python"
