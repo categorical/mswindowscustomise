@@ -34,8 +34,8 @@ _2bin "$progdir/golang/bin/go.exe"
 _2bin "$progdir/protoc/bin/protoc.exe"
 _2bin "$progdir/vlc/vlc.exe"
 _2bin 'C:\Program Files (x86)\Microsoft Office\Office14\excel.exe'
-_2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe\msbuild.exe'
-_2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe\msbuild.exe'
+_2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
+_2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
 
 
 
