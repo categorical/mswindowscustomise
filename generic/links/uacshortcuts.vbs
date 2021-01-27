@@ -51,6 +51,7 @@ searchable(progdir & "winspy\winspy.exe")
 searchable(progdir & "moninfo\moninfo.exe")
 
 
+searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
 searchablenargs progdir & "vscode\code.exe","code",""
 searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
