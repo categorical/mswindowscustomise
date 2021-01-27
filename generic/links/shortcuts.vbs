@@ -17,8 +17,5 @@ Function withargs(i,args)
     End If
 End Function
 
-
-
 'withargs progdir & "opera\launcher.exe", "--disable-update"
-
 
