@@ -50,7 +50,11 @@ searchable(progdir & "moninfo\moninfo.exe")
 
 
 searchablenargs progdir & "vscode\code.exe","code",""
-'searchablenargs progdir & "opera\launcher.exe","operanoupdate","--disable-update"
+searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
+    "--disable-update --proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%0proxy%")&chr(34)
+
+'searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
+'    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%0proxy%")&chr(34)
 
 
 
