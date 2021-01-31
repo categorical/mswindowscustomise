@@ -14,7 +14,7 @@ _golang(){
     go get 'golang.org/x/lint/golint'
 }
 
-_golangclear()(
+_golangclean()(
     [ ! -d 'd:\godev' ]||set -x;rm -rf 'd:\godev'
 )
 
@@ -22,13 +22,13 @@ _usage(){
     cat<<-EOF
 	SYNOPSIS:
 	    $0 --golang
-	    $0 --golangclear
+	    $0 --golangclean
 	EOF
 }
 
 case "${1}" in
     --golang)_golang;;
-    --golangclear)_golangclear;;
+    --golangclean)_golangclean;;
     *)_usage;;
 esac
 
