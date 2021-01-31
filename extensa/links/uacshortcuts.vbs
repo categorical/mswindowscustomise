@@ -48,7 +48,7 @@ searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
 searchable(progdir & "moninfo\moninfo.exe")
 
-
+searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 searchablenargs progdir & "vscode\code.exe","code",""
 searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
     "--disable-update --proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%0proxy%")&chr(34)
