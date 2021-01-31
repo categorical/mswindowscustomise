@@ -7,11 +7,16 @@ _golang(){
     [ "$d" = 'd:\godev' ]||exit 1
     [ -d "$d" ]||mkdir "$d"
 
+    local gobin="$GOPATH/bin"
     go get 'golang.org/x/tools/gopls'
-    go get 'github.com/uudashr/gopkgs/v2/cmd/gopkgs'
+    go get 'github.com/uudashr/gopkgs/cmd/gopkgs'
+    #go get 'github.com/uudashr/gopkgs/v2/cmd/gopkgs'
     go get 'github.com/ramya-rao-a/go-outline'
     go get 'github.com/go-delve/delve/cmd/dlv'
     go get 'golang.org/x/lint/golint'
+    go get 'github.com/stamblerre/gocode' && mv "$gobin/gocode.exe" "$gobin/gocode-gomod.exe"
+    go get 'github.com/mdempsky/gocode'
+    go get 'github.com/rogpeppe/godef'
 }
 
 _golangclean()(
