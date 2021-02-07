@@ -39,7 +39,6 @@ _2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
 _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
 
 
-
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
 #_2bin "$progdir/jdk/bin/javac.exe"

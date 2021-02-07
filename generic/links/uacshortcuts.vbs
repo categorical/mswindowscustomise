@@ -49,8 +49,10 @@ searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
 searchable(progdir & "winspy\winspy.exe")
 searchable(progdir & "moninfo\moninfo.exe")
+searchable(progdir & "procmon\procmon64.exe")
 
 
+searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
 searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
 searchablenargs progdir & "vscode\code.exe","code",""
