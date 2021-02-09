@@ -37,7 +37,7 @@ _2bin "$progdir/7z/7z.exe"
 _2bin 'C:\Program Files (x86)\Microsoft Office\Office14\excel.exe'
 _2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
 _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
-
+#_2bin "$progdir/wfreerdp/wfreerdp.exe"
 
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
@@ -64,6 +64,9 @@ _2bin "$maintenancedir/generic/misc/hex2dec"
 
 #_2bin "$devdir/githubrepositories/gitapi"
 #_2bin "$optdir/installyoutubedl/dltube"
+_2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
+_2bin "$optdir/installmssqlc/run.sh" "$bindir/mssqlc"
+
 
 }
 
