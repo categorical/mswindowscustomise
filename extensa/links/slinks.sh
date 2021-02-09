@@ -63,7 +63,7 @@ _2bin "$maintenancedir/xps/misc/hex2dec"
 _2bin "$devdir/githubrepositories/gitapi"
 _2bin "$optdir/installyoutubedl/dltube"
 _2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
-#_2bin "$optdir/installmssqlc/run.sh" "$bindir/mssqlc"
+_2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 
 
 }
