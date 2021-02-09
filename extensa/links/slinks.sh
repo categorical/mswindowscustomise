@@ -33,6 +33,9 @@ _2bin "$progdir/python3/scripts/pip.exe"
 _2bin "$progdir/golang/bin/go.exe"
 _2bin "$progdir/golang/bin/gofmt.exe"
 _2bin "$progdir/vlc/vlc.exe"
+_2bin "$progdir/7z/7z.exe"
+
+
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
 #_2bin "$progdir/jdk/bin/javac.exe"
@@ -57,8 +60,11 @@ _2bin "$maintenancedir/xps/misc/hex2dec"
 
 
 
-#_2bin "$devdir/githubrepositories/gitapi"
+_2bin "$devdir/githubrepositories/gitapi"
 _2bin "$optdir/installyoutubedl/dltube"
+_2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
+#_2bin "$optdir/installmssqlc/run.sh" "$bindir/mssqlc"
+
 
 }
 
