@@ -7,9 +7,9 @@ f="$progdir/vscode/code.exe"
 proxy=${http_proxy}
 
 if [ -z "$proxy" ];then
-    "$f" "$@"
+    "$f" "$@" 2>&1 >/dev/null &
 else
-    "$f" --proxy-server="${proxy/:\/\//=}" "$@"
+    "$f" --proxy-server="${proxy/:\/\//=}" "$@" 2>&1 >/dev/null &
 fi
 
 
