@@ -27,7 +27,7 @@ function _update(){
 #_2bin "$progdir/mercurial/hg.exe"
 
 _2bin "$progdir/portablegit/bin/git.exe"
-_2bin "$progdir/emacs/bin/emacs.exe"
+#_2bin "$progdir/emacs/bin/emacs.exe"
 _2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdir/python3/scripts/pip.exe"
 _2bin "$progdir/golang/bin/go.exe"
@@ -45,6 +45,7 @@ _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
 #_2bin "$progdir/jdk/bin/jmap.exe"
 #_2bin "$progdir/autohotkey/autohotkeyu64.exe" "$bindir/ahk"
 #_2bin "$progdir/nssm/win64/nssm.exe" "$bindir/nssm"
+_2bin "$maintenancedir/generic/patches/emacs.sh" "$bindir/emacs"
 _2bin "$maintenancedir/generic/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/generic/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/generic/misc/rubbish.sh" "$bindir/rubbish"
