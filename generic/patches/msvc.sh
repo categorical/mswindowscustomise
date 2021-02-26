@@ -1,7 +1,7 @@
 #!/bin/bash
 
 msvc='C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat'
-#msvc='C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat'
+
 # VsDevCmd.bat:239
 # When the output is redirected, this call infests the fd longer, thus blocks.
 export VSCMD_SKIP_SENDTELEMETRY='telenimei'
