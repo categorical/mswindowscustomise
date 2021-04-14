@@ -50,6 +50,7 @@ searchable(progdir & "wireshark\wireshark.exe")
 searchable(progdir & "winspy\winspy.exe")
 searchable(progdir & "moninfo\moninfo.exe")
 searchable(progdir & "procmon\procmon64.exe")
+searchable(progdir & "resourcehacker\resourcehacker.exe")
 
 
 searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
