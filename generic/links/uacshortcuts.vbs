@@ -56,7 +56,7 @@ searchable(progdir & "resourcehacker\resourcehacker.exe")
 searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
 searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
-searchablenargs progdir & "vscode\code.exe","code",""
+searchablenargs progdir & "vscode\code.exe","vscode",""
 searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
     "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%fooproxy%")&chr(34)
 'searchablenargs progdir & "opera\launcher.exe","operanoupdate","--disable-update"
