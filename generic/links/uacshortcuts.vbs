@@ -51,8 +51,9 @@ searchable(progdir & "winspy\winspy.exe")
 searchable(progdir & "moninfo\moninfo.exe")
 searchable(progdir & "procmon\procmon64.exe")
 searchable(progdir & "resourcehacker\resourcehacker.exe")
+searchable(progdir & "imageglass\imageglass.exe")
 
-
+searchablenargs progdir & "photoshop\photoshopportable.exe","photoshop",""
 searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
 searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
