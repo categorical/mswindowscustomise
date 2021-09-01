@@ -72,7 +72,7 @@ _2bin "$maintenancedir/generic/misc/hex2dec"
 #_2bin "$optdir/installyoutubedl/dltube"
 _2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
-
+_2bin "$optdir/mstools/installlitec/litec" "$bindir/litec"
 
 }
 
