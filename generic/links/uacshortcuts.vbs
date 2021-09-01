@@ -52,6 +52,7 @@ searchable(progdir & "moninfo\moninfo.exe")
 searchable(progdir & "procmon\procmon64.exe")
 searchable(progdir & "resourcehacker\resourcehacker.exe")
 searchable(progdir & "imageglass\imageglass.exe")
+searchable(progdir & "charles\charles.exe")
 
 searchablenargs progdir & "photoshop\photoshopportable.exe","photoshop",""
 searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
