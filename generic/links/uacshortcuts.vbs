@@ -56,7 +56,8 @@ searchable(progdir & "charles\charles.exe")
 
 searchablenargs progdir & "photoshop\photoshopportable.exe","photoshop",""
 searchablenargs progdir & "bencode\bencode editor.exe","bencode",""
-searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
+'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
+searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
 searchablenargs progdir & "intellij\bin\idea64.exe","intellij",""
 searchablenargs progdir & "vscode\code.exe","vscode",""
 searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
