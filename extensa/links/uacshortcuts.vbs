@@ -49,7 +49,7 @@ searchable(progdir & "wireshark\wireshark.exe")
 searchable(progdir & "moninfo\moninfo.exe")
 
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
-searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(35)&"unifont"&chr(34)&" -"
+searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
 
 
 
