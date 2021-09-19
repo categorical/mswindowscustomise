@@ -34,6 +34,10 @@ function _setmsvcenv(){
 function _setv(){
     local v="$2"
     local k="$1"
+    if [[ $k =~ ^[0-9] ]];then
+        # environment variable name does not begin with a digit
+        return 1
+    fi
     #printf '%s=%s\n' "$k" "$v"
     export "$k"="$v"
 }
