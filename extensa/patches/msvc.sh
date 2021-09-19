@@ -6,6 +6,10 @@ msvc='C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Too
 # When the output is redirected, this call infests the fd longer, thus blocks.
 export VSCMD_SKIP_SENDTELEMETRY='telenimei'
 
+
+# requirements: vs_buildtools: c++: msvc 'windows 10 sdk'
+
+
 function _msvcenv()(
     msvcd=$(dirname "$msvc")
     # cd because I don't have a way to double quote spaces to cmd.
