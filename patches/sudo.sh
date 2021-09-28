@@ -33,7 +33,8 @@ done
 
 args="cd '$(pwd)'"
 args+=";$*"
-args+=';sleep 60'
+#args+=';sleep 60'
+args+=';read -t 60 -p "execution has completed"'
 args="$(_doublequote "$args")"
 #echo "$args"
 cygstart --action=runas --wait \
