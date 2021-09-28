@@ -31,12 +31,11 @@ for arg;do
     :
 done
 
-args="cd $(pwd)"
+args="cd '$(pwd)'"
 args+=";$*"
 args+=';sleep 60'
 args="$(_doublequote "$args")"
 #echo "$args"
-
 cygstart --action=runas --wait \
     bash --login -c "$args"
 
