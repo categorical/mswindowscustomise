@@ -31,7 +31,10 @@ set "msexplorer=HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer"
 reg add "%msexplorer%\advanced" /v showtaskviewbutton /d 0 /t reg_dword /f
 ::reg delete "%msexplorer%\advanced\people" /v peopleband /f
 reg add "%msexplorer%\advanced\people" /v peopleband /d 0 /t reg_dword /f
-
 reg query "%msexplorer%\advanced"
+
+set "mssearch=HKCU\Software\Microsoft\Windows\CurrentVersion\Search"
+reg add "%mssearch%" /v searchboxtaskbarmode /d 0 /t reg_dword /f
+reg query "%mssearch%"
 
 
