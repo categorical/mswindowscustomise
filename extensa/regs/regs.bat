@@ -10,6 +10,8 @@ reg query "HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" /
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragHeight /d 120 /f
 reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragWidth /d 120 /f
 
+
+GOTO nopath
 ::reg delete "HKEY_CURRENT_USER\Environment" /v GOPATH /f
 reg add "HKEY_CURRENT_USER\Environment" /v GOPATH /d "d:\godev" /f
 set "mspath="
@@ -21,7 +23,15 @@ set "mspath=%mspath%d:\programs\portablegit\bin;"
 setx "Path" "%mspath%"
 reg query "HKEY_CURRENT_USER\Environment" /v Path
 
+:nopath
 
 
+:: Discards nonsense items from the side panel, requires restart explorer
+set "msexplorer=HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer"
+reg add "%msexplorer%\advanced" /v showtaskviewbutton /d 0 /t reg_dword /f
+::reg delete "%msexplorer%\advanced\people" /v peopleband /f
+reg add "%msexplorer%\advanced\people" /v peopleband /d 0 /t reg_dword /f
+
+reg query "%msexplorer%\advanced"
 
 
