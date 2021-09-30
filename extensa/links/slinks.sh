@@ -62,6 +62,8 @@ _2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
 _2bin "$maintenancedir/xps/misc/hex2dec"
 
 
+_2bin "$maintenancedir/misc/msversion.sh" "$bindir/msversion"
+_2bin "$maintenancedir/misc/msmod.sh" "$bindir/msmod"
 
 _2bin "$devdir/githubrepositories/gitapi"
 _2bin "$optdir/installyoutubedl/dltube"
