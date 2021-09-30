@@ -16,11 +16,11 @@ _usage(){
 _filemod(){
     local f="$1"
     case "$f" in
-        *.exe)chmod 775 "$f";;
+        *.exe);&
+        *.cmd);&
+        *.bat);&
         *.sh)chmod 775 "$f";;
-        *.bat)chmod 775 "$f";;
-        *.cmd)chmod 775 "$f";;
-        *)echo chmod 664 "$f";;
+        *)chmod 664 "$f";;
     esac
 }
 

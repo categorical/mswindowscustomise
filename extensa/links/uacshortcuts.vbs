@@ -55,10 +55,10 @@ searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifon
 
 searchablenargs progdir & "vscode\code.exe","vscode",""
 searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
-    "--disable-update --proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%0proxy%")&chr(34)
+    "--disable-update --proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)
 
 'searchablenargs "C:\Program Files\Google\Chrome\Application\chrome.exe", _
-'    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%0proxy%")&chr(34)
+'    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)
 
 
 
