@@ -31,10 +31,22 @@ set "msexplorer=HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer"
 reg add "%msexplorer%\advanced" /v showtaskviewbutton /d 0 /t reg_dword /f
 ::reg delete "%msexplorer%\advanced\people" /v peopleband /f
 reg add "%msexplorer%\advanced\people" /v peopleband /d 0 /t reg_dword /f
-reg query "%msexplorer%\advanced"
+::reg delete "%msexplorer%\advanced" /v taskbarsmallicons /f
+reg add "%msexplorer%\advanced" /v taskbarsmallicons /d 1 /t reg_dword /f
+::reg delete "%msexplorer%\advanced" /v taskbarglomlevel /f
+reg add "%msexplorer%\advanced" /v taskbarglomlevel /d 2 /t reg_dword /f
+::reg query "%msexplorer%\advanced"
+reg add "%msexplorer%" /v enableautotray /d 0 /t reg_dword /f
+::reg query "%msexplorer%"
+
 
 set "mssearch=HKCU\Software\Microsoft\Windows\CurrentVersion\Search"
 reg add "%mssearch%" /v searchboxtaskbarmode /d 0 /t reg_dword /f
-reg query "%mssearch%"
+::reg query "%mssearch%"
+
+
+
+
+
 
 
