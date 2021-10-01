@@ -23,6 +23,7 @@ s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hid
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescavolume",0,"REG_DWORD"
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescapower",0,"REG_DWORD"
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescanetwork",0,"REG_DWORD"
+' not used
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescahealth",1,"REG_DWORD"
 's.RegWrite "HKLM\software\policies\microsoft\windows\explorer\disablenotificationcenter",1,"REG_DWORD"
 
@@ -31,7 +32,10 @@ s.RegDelete "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth"
 On Error GoTo 0
 's.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth","%windir%\system32\securityhealthsystray.exe","REG_EXPAND_SZ"
 
-
+' NOT WORKING TODO
+On Error Resume Next
+s.RegDelete "HKLM\software\microsoft\windows\currentversion\explorer\desktop\namespace\{645FF040-5081-101B-9F08-00AA002F954E}"
+On Error GoTo 0
 
 
 s.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\programs\npp\notepad++.exe ""%1"""

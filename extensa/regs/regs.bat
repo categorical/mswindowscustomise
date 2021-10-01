@@ -38,13 +38,11 @@ reg add "%msexplorer%\advanced" /v taskbarglomlevel /d 2 /t reg_dword /f
 ::reg query "%msexplorer%\advanced"
 reg add "%msexplorer%" /v enableautotray /d 0 /t reg_dword /f
 ::reg query "%msexplorer%"
-
+reg add "%msexplorer%\hidedesktopicons\newstartpanel" /v "{645FF040-5081-101B-9F08-00AA002F954E}" /t reg_dword /d 1 /f
 
 set "mssearch=HKCU\Software\Microsoft\Windows\CurrentVersion\Search"
 reg add "%mssearch%" /v searchboxtaskbarmode /d 0 /t reg_dword /f
 ::reg query "%mssearch%"
-
-
 
 
 
