@@ -1,0 +1,28 @@
+#!/bin/bash
+
+_kill(){
+    local pid=$(ps -W|grep -v 'PID'|grep -i "$1"|head -n1|awk '{print $4}')
+    [ ! -z "$pid" ]||{ _errorf 'not found';exit 1;}
+    sudo taskkill /pid "$pid" /f
+}
+
+_usage(){
+    cat <<-EOF
+	SYNOPSIS:
+	"$0" NAMECONTAINS
+	EOF
+
+}
+_infof(){ local f=$1;shift;_info "$(printf "$f" "$@")";}
+_info(){ printf "\033[96minfo: \033[0m%s\n" "$*";}
+_errorf(){ local f=$1;shift;_error "$(printf "$f" "$@")";}
+_error(){ printf "\033[31merror: \033[0m%s\n" "$*" 1>&2;}
+
+if [ -z "$1" ];then
+    _usage 
+    exit 1
+fi
+_kill "$1"
+
+
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+secs="${1:-5}"
+
+seq 6|xargs -P0 -n1 timeout "$secs" yes>/dev/null
+#seq 6|xargs -P0 -n1 -I{} timeout "$secs" dd if=/dev/zero of=/dev/null
+
+
+
+
