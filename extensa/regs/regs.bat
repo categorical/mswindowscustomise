@@ -44,7 +44,7 @@ set "mssearch=HKCU\Software\Microsoft\Windows\CurrentVersion\Search"
 reg add "%mssearch%" /v searchboxtaskbarmode /d 0 /t reg_dword /f
 ::reg query "%mssearch%"
 
-
+reg add "hkcu\control panel\bluetooth" /v "notification area icon" /d 0 /t reg_dword /f
 
 
 
