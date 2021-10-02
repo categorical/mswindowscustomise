@@ -37,6 +37,12 @@ s.RegDelete "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth"
 On Error GoTo 0
 's.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth","%windir%\system32\securityhealthsystray.exe","REG_EXPAND_SZ"
 
+
+On Error Resume Next
+s.RegDelete "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\rtkauduservice"
+On Error GoTo 0
+
+
 'On Error Resume Next
 's.RegDelete "HKLM\software\microsoft\windows\currentversion\explorer\desktop\namespace\{645FF040-5081-101B-9F08-00AA002F954E}"
 'On Error GoTo 0
