@@ -34,7 +34,8 @@ _msmod(){
     elif [ -d "$d" ];then
         
         sudo takeown /f "$(cygpath -w "$d")" /r /d y
-        chmod -R 775 "$d"
+        sudo chmod -R 775 "$d"
+        #chmod -R 775 "$d"
         fs=()
         while IFS= read -d $'\0';do
             fs+=("$REPLY")
