@@ -7,11 +7,11 @@ reg query "HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" /
 ::reg add "HKEY_CURRENT_USER\Control Panel\Input Method" /v EnableHexNumpad /t REG_SZ /d 1 /f 
 
 :: Requires log off/on to see the effects.
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragHeight /d 120 /f
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragWidth /d 120 /f
+::reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragHeight /d 120 /f
+::reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragWidth /d 120 /f
 
 
-GOTO nopath
+::GOTO nopath
 ::reg delete "HKEY_CURRENT_USER\Environment" /v GOPATH /f
 reg add "HKEY_CURRENT_USER\Environment" /v GOPATH /d "d:\godev" /f
 set "mspath="

@@ -50,6 +50,7 @@ _2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
 _2bin "$maintenancedir/extensa/misc/autokeys/autokeys.cmd" "$bindir/autokeys"
 _2bin "$maintenancedir/extensa/misc/crlf.sh" "$bindir/crlf"
+_2bin "$maintenancedir/extensa/misc/touchsh.sh" "$bindir/touchsh"
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"

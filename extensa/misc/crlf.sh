@@ -1,7 +1,11 @@
 #!/bin/bash
 
 
-_include=('*.bat' '*.sh' '*.py')
+_include=(
+'*.bat' '*.sh' '*.py' '*.el'
+'*.css'
+'.gitignore' '.hgignore'
+)
 
 _find(){
     local names v
