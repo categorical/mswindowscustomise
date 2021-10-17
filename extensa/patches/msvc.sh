@@ -69,13 +69,17 @@ _provision(){
     # but exports are unintentional if non idempotent, e.g. PATH=$PATH:foo.
     # _setmsvcenv && bash --login -i
     # n.b. --rcfile and --login are mutually exclusive.
+    if [ $# -eq 0 ];then
     _setmsvcenv && bash --rcfile <(cat "$HOME/.bash_profile";_ps1) -i
+    else
+    _setmsvcenv && "$@"
+    fi
 }
 
 case $1 in
     --env)_msvcenv;;
     -h)_usage;;
-    *)_provision;;
+    *)_provision "$@";;
 esac
 
 

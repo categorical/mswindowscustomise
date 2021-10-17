@@ -51,12 +51,20 @@ _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
 _2bin "$maintenancedir/extensa/misc/autokeys/autokeys.cmd" "$bindir/autokeys"
 _2bin "$maintenancedir/extensa/misc/crlf.sh" "$bindir/crlf"
 _2bin "$maintenancedir/extensa/misc/touchsh.sh" "$bindir/touchsh"
+_2bin "$maintenancedir/extensa/misc/iselevated.sh" "$bindir/iselevated"
 
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
 _2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
 #_2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
+
+#_2bin 'C:\Program Files (x86)\Microsoft Office\Office14\excel.exe'
+_2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
+_2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
+
+
+
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
 _2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
