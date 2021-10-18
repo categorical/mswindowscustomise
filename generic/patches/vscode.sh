@@ -17,8 +17,8 @@ fi
 }
 
 _stop(){
-    taskkill /im code.exe /f
     :
+    taskkill /im code.exe /f
 }
 
 case $1 in
