@@ -63,6 +63,9 @@ _2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
 _2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
 _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
 
+_2bin '/cygdrive/c/windows/system32/pnputil.exe'
+_2bin '/cygdrive/c/windows/system32/dism.exe'
+
 
 
 

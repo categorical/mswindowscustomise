@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+if iselevated;then "$@";exit;fi
  
 # 1. Escapes every ': \'
 # 2. single quotes every remaining substring.
