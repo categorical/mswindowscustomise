@@ -48,4 +48,3 @@ reg add "hkcu\control panel\bluetooth" /v "notification area icon" /d 0 /t reg_d
 reg add "hkcu\control panel\desktop" /v "enableperprocesssystemdpi" /d 0 /t reg_dword /f
 
 
-
