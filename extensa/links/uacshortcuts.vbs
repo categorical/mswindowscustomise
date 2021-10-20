@@ -65,6 +65,11 @@ searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
 '    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)
 
 
+searchablenargs "d:\programs\chrome\chrome.exe", _
+    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)& _
+    " "
+
+
 
 
 

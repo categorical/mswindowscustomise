@@ -76,6 +76,7 @@ _2bin "$maintenancedir/xps/misc/hex2dec"
 
 _2bin "$maintenancedir/misc/msversion.sh" "$bindir/msversion"
 _2bin "$maintenancedir/misc/msmod.sh" "$bindir/msmod"
+_2bin "$maintenancedir/backlog/robo.sh" "$bindir/robo"
 
 _2bin "$devdir/githubrepositories/gitapi"
 _2bin "$optdir/installyoutubedl/dltube"
