@@ -10,10 +10,13 @@ _error(){ printf "\033[31merror: \033[0m%s\n" "$*";}
 _template(){
 cat <<'EOD'
 #!/bin/bash
-_infof(){ local f=$1;shift;_info "$(printf "$f" "$@")";}
-_info(){ printf "\033[96minfo: \033[0m%s\n" "$*";}
-_errorf(){ local f=$1;shift;_error "$(printf "$f" "$@")";}
-_error(){ printf "\033[31merror: \033[0m%s\n" "$*";}
+#_infof(){ local f=$1;shift;_info "$(printf "$f" "$@")";}
+#_info(){ printf "\033[96minfo: \033[0m%s\n" "$*";}
+#_errorf(){ local f=$1;shift;_error "$(printf "$f" "$@")";}
+#_error(){ printf "\033[31merror: \033[0m%s\n" "$*";}
+_infof(){ local f=$1;shift;printf "\033[96minfo: \033[0m%s\n" "$(printf "$f" "$@")";}
+_errorf(){ local f=$1;shift;printf "\033[91merror: \033[0m%s\n" "$(printf "$f" "$@")";}
+
 dthis="$(cd "$(dirname "$0")"&&pwd)"
 _usage(){
 	cat<<-EOF
