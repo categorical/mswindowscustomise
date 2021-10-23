@@ -19,6 +19,7 @@ set "mspath=%mspath%%%USERPROFILE%%\AppData\Local\Microsoft\WindowsApps;"
 set "mspath=%mspath%d:\bin;"
 set "mspath=%mspath%d:\sbin;"
 set "mspath=%mspath%d:\programs\portablegit\bin;"
+set "mspath=%mspath%d:\programs\jdk\bin;"
 ::reg add "HKEY_CURRENT_USER\Environment" /v Path /d "%mspath%" /f
 setx "Path" "%mspath%"
 reg query "HKEY_CURRENT_USER\Environment" /v Path
