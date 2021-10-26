@@ -40,4 +40,3 @@ reg query "HKEY_CURRENT_USER\Environment" /v Path
 
 
 
-

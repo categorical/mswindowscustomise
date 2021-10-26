@@ -77,7 +77,7 @@ On Error GoTo 0
 
 
 s.RegWrite "HKLM\System\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal",1,"REG_DWORD"
-
+s.RegWrite "HKLM\SYSTEM\CurrentControlSet\Control\Network\newnetworkwindowoff\","","REG_SZ"
 
 Set fso=CreateObject("Scripting.FileSystemObject")
 
