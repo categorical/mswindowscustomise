@@ -39,6 +39,8 @@ _2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
 _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
 _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\wsdl.exe'
 _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\svcutil.exe'
+_2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\x64\svcutil.exe' "$bindir/svcutil2"
+_2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\svcutil.exe' "$bindir/svcutil3"
 #_2bin 'C:\Program Files\dotnet\dotnet.exe'
 #_2bin "$progdir/wfreerdp/wfreerdp.exe"
 
