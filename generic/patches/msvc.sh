@@ -61,7 +61,7 @@ _provision(){
     # but exports are unintentional if non idempotent, e.g. PATH=$PATH:foo.
     # _setmsvcenv && bash --login -i
     # n.b. --rcfile and --login are mutually exclusive.
-    _setmsvcenv && bash --rcfile <(cat "$HOME/.bash_profile";_ps1) -i
+    _setmsvcenv && bash --rcfile <(cat "$HOME/.bash_profile";_ps1;cat '/etc/profile.d/vim.sh') -i
 }
 
 case $1 in
