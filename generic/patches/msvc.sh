@@ -52,7 +52,7 @@ _usage(){
 
 _ps1(){
     cat <<-EOF
-	PS1='\[\e]0;\w\a\]\n\[\e[36m\](msvc) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$'
+	PS1='\[\e]0;\w\a\]\n\[\e[36m\](msvc) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 	EOF
 }
 _provision(){
