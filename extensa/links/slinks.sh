@@ -56,7 +56,8 @@ _2bin "$maintenancedir/extensa/misc/iselevated.sh" "$bindir/iselevated"
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
-_2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
+#_2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
+_2bin "$maintenancedir/patches/msvc.sh" "$bindir/msvc"
 #_2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
 
 #_2bin 'C:\Program Files (x86)\Microsoft Office\Office14\excel.exe'
