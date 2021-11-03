@@ -23,8 +23,10 @@ _escape(){
 _doublequote(){
     printf '%s' "$1"|sed 's/"/""/g;s/\(.*\)/"\1/'
 }
-    
 
+_messagef(){ local f=$1;shift;printf '\033[96m[%s] %s\033[0m\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$(printf "$f" "$@")";}
+
+    
 # Single quotes every argument.
 for arg;do
     set -- "$@" "$(_quote "$arg")"
@@ -32,10 +34,14 @@ for arg;do
     :
 done
 
+
 args="cd '$(pwd)'"
 args+=";$*"
 #args+=';sleep 60'
-args+=';read -t 60 -p "execution has completed"'
+timeoutsecs=60
+args+=";read -t $timeoutsecs -p '$(_messagef \
+    "The operation has completed. This window closes after %s seconds." \
+    $timeoutsecs)'"
 args="$(_doublequote "$args")"
 #echo "$args"
 cygstart --action=runas --wait \
