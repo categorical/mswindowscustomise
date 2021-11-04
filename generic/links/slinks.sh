@@ -70,6 +70,7 @@ _2bin "$maintenancedir/patches/sudo.sh" "$bindir/sudo"
 _2bin "$maintenancedir/generic/misc/hex2dec"
 _2bin "$maintenancedir/misc/msmod.sh" "$bindir/msmod"
 _2bin "$maintenancedir/extensa/misc/iselevated.sh" "$bindir/iselevated"
+_2bin "$maintenancedir/tools/mssuspend/bin/mssuspend.exe" "$bindir"
 
 #_2bin "$devdir/githubrepositories/gitapi"
 #_2bin "$optdir/installyoutubedl/dltube"

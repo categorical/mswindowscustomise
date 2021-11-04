@@ -16,6 +16,7 @@ _install(){
 
 _remove(){
     :
+    [ ! -L "$dbin/mssuspend.exe" ]||(set -x;rm "$dbin/mssuspend.exe")
 }
 
 
