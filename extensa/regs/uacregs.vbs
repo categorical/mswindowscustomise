@@ -37,6 +37,14 @@ s.RegDelete "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth"
 On Error GoTo 0
 's.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\securityhealth","%windir%\system32\securityhealthsystray.exe","REG_EXPAND_SZ"
 
+'BSOD when set to 0, i.e. S3 enabled
+'s.RegWrite "HKLM\System\CurrentControlSet\Control\Power\csenabled",0,"REG_DWORD"
+'s.RegWrite "HKLM\System\CurrentControlSet\Control\Power\csenabled",1,"REG_DWORD"
+
+'disables hibernate, therefore, fast startup
+s.RegWrite "HKLM\System\CurrentControlSet\Control\Power\hibernateenabled",0,"REG_DWORD"
+
+
 
 On Error Resume Next
 s.RegDelete "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\rtkauduservice"
