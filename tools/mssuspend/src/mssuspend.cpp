@@ -32,11 +32,21 @@ int suspend_s0()
 
 int usage(char* argv[]){
     const char* f=R"EOF(SYNOPSIS
-    %s --s0
+    %s --s0ix
     %s --s3
+OPTIONS
+    -0, --s0ix
+        DPMS off. MS's "modern standby".
+    -3, --s3
+        Suspend to RAM.
 EPILOGUE
-    --s0 DPMS off. MS's "modern standby".
-    --s3 Suspend to RAM.
+    powercfg /a lists MS's sleep states, with S0ix and S3 being mutually exclusive.
+    +-----------------------+-----------+-------+
+    |available state\option |-0         |-3     |
+    +-----------------------+-----------+-------+         
+    |S0ix                   |S0ix       |error  |
+    |S3                     |DPMS off   |S3     |
+    +-----------------------+-----------+-------+
 )EOF";
     logf(f,argv[0],argv[0]);
     return 0;
@@ -46,12 +56,12 @@ int main(int argc,char* argv[])
 {
     int rv=0;
     if(argc>1){
-        if(std::strcmp(argv[1],"--s0")==0){
+        if(std::strcmp(argv[1],"--s0ix")==0||std::strcmp(argv[1],"-0")==0){
             rv=suspend_s0();
             logf("sleep state: S0ix, rv: %d",rv);
             return rv>0?0:1;
         }
-        if(std::strcmp(argv[1],"--s3")==0){
+        if(std::strcmp(argv[1],"--s3")==0||std::strcmp(argv[1],"-3")==0){
             rv=suspend_s3();
             int err=0;
             if(rv==0){
