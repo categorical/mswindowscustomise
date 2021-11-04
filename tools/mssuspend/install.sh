@@ -11,7 +11,7 @@ _build(){
 
 _install(){
     :
-    ln -s "$dthis/bin/suspend.exe" "$dbin"
+    ln -s "$dthis/bin/mssuspend.exe" "$dbin"
 }
 
 _remove(){
