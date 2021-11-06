@@ -5,7 +5,7 @@ readonly bindir="/cygdrive/d/bin"
 maintenancedir="/cygdrive/d/dev/mswindowscustomise"
 optdir="/cygdrive/d/redev"
 devdir="/cygdrive/d/dev"
-
+dopt='/cygdrive/d/opt'
 
 function _2bin(){
 	local -r f=$1
@@ -26,12 +26,12 @@ function _update(){
 #_2bin "$progdir/ruby/bin/ridk.cmd" "$bindir/ridk"
 #_2bin "$progdir/mercurial/hg.exe"
 
-_2bin "$progdir/portablegit/bin/git.exe"
-_2bin "$progdir/emacs/bin/emacs.exe"
+_2bin "$dopt/portablegit/bin/git.exe"
+_2bin "$dopt/emacs/bin/emacs.exe"
 _2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdir/python3/scripts/pip.exe"
-_2bin "$progdir/golang/bin/go.exe"
-_2bin "$progdir/golang/bin/gofmt.exe"
+_2bin "$dopt/golang/bin/go.exe"
+_2bin "$dopt/golang/bin/gofmt.exe"
 _2bin "$progdir/vlc/vlc.exe"
 _2bin "$progdir/7z/7z.exe"
 
