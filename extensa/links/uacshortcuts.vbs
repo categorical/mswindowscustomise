@@ -17,6 +17,7 @@ Set fso=CreateObject("Scripting.FileSystemObject")
 
 
 progdir="D:\programs\"
+dopt="d:\opt\"
 searchdir=s.SpecialFolders("AllUsersPrograms") & "\_search\"
 
 
@@ -41,8 +42,8 @@ End Function
 'searchable(progdir & "vlc\vlc.exe")
 searchable(progdir & "deluge\deluge.exe")
 searchable(progdir & "npp\notepad++.exe")
-searchable(progdir & "emacs\bin\runemacs.exe")
-searchable(progdir & "mozillafirefox\firefox.exe")
+searchable(dopt & "emacs\bin\runemacs.exe")
+searchable(dopt & "mozillafirefox\firefox.exe")
 searchable(progdir & "regfromapp\regfromapp.exe")
 searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
@@ -57,7 +58,7 @@ searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifon
 
 
 
-searchablenargs progdir & "vscode\code.exe","vscode",""
+searchablenargs dopt & "vscode\code.exe","vscode",""
 searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
     "--disable-update --proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)
 
@@ -65,7 +66,7 @@ searchablenargs progdir & "opera\launcher.exe","operanoupdate", _
 '    "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)
 
 
-searchablenargs "d:\programs\chrome\chrome.exe", _
+searchablenargs dopt & "chrome\chrome.exe", _
     "chrome","--proxy-server="&chr(34)&s.ExpandEnvironmentStrings("%msproxy%")&chr(34)& _
     " "
 

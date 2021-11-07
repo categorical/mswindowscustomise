@@ -2,7 +2,8 @@
 
 
 progdir='/cygdrive/d/programs'
-f="$progdir/vscode/code.exe"
+dopt='/cygdrive/d/opt'
+f="$dopt/vscode/code.exe"
 
 proxy=${http_proxy}
 

@@ -44,7 +44,7 @@ _2bin "$progdir/7z/7z.exe"
 #_2bin "$progdir/nssm/win64/nssm.exe" "$bindir/nssm"
 
 _2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/vscode"
-_2bin "$progdir/vscode/bin/code" "$bindir/code"
+_2bin "$dopt/vscode/bin/code" "$bindir/code"
 #_2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
