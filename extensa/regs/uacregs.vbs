@@ -59,10 +59,10 @@ On Error GoTo 0
 'On Error GoTo 0
 's.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\desktop\namespace\{645FF040-5081-101B-9F08-00AA002F954E}\","recycle bin","REG_SZ"
 
-s.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\programs\npp\notepad++.exe ""%1"""
-s.RegWrite "HKEY_CLASSES_ROOT\VBSFile\Shell\Edit\Command\","D:\programs\npp\notepad++.exe ""%1"""
-s.RegWrite "HKEY_CLASSES_ROOT\cmdfile\shell\edit\command\","D:\programs\npp\notepad++.exe ""%1"""
-s.RegWrite "HKCR\Microsoft.PowerShellScript.1\Shell\Edit\Command\","D:\programs\npp\notepad++.exe ""%1"""
+s.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\opt\npp\notepad++.exe ""%1"""
+s.RegWrite "HKEY_CLASSES_ROOT\VBSFile\Shell\Edit\Command\","D:\opt\npp\notepad++.exe ""%1"""
+s.RegWrite "HKEY_CLASSES_ROOT\cmdfile\shell\edit\command\","D:\opt\npp\notepad++.exe ""%1"""
+s.RegWrite "HKCR\Microsoft.PowerShellScript.1\Shell\Edit\Command\","D:\opt\npp\notepad++.exe ""%1"""
 
 
 's.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
