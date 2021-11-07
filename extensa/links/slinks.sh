@@ -32,7 +32,7 @@ _2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$progdir/python3/scripts/pip.exe"
 _2bin "$dopt/golang/bin/go.exe"
 _2bin "$dopt/golang/bin/gofmt.exe"
-_2bin "$progdir/vlc/vlc.exe"
+_2bin "$dopt/vlc/vlc.exe"
 _2bin "$progdir/7z/7z.exe"
 
 
