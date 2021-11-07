@@ -1,6 +1,6 @@
 #!/bin/bash
 
-executable=/cygdrive/d/programs/python3/python.exe
+executable=/cygdrive/d/opt/python3/python.exe
 
 scriptpath=$1
 if [ -f "$scriptpath" ];then

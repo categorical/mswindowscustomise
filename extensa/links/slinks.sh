@@ -28,8 +28,8 @@ function _update(){
 
 _2bin "$dopt/portablegit/bin/git.exe"
 _2bin "$dopt/emacs/bin/emacs.exe"
-_2bin "$progdir/python3/python.exe" "$bindir/pythonwin.exe"
-_2bin "$progdir/python3/scripts/pip.exe"
+_2bin "$dopt/python3/python.exe" "$bindir/pythonwin.exe"
+_2bin "$dopt/python3/scripts/pip.exe"
 _2bin "$dopt/golang/bin/go.exe"
 _2bin "$dopt/golang/bin/gofmt.exe"
 _2bin "$dopt/vlc/vlc.exe"

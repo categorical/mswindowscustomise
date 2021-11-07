@@ -1,6 +1,6 @@
 #!/bin/bash
 
-virtualenvwin='d:\programs\python3\Scripts\virtualenv.exe'
+virtualenvwin='d:\opt\python3\Scripts\virtualenv.exe'
 virtualenvpath=$(cygpath -u "$virtualenvwin")
 
 for i in "$@";do :;done
