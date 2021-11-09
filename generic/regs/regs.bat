@@ -33,8 +33,13 @@ reg query "HKEY_CURRENT_USER\Environment" /v Path
 
 :nopath
 
-
-
+::settings|devices|typing|advanced|desktop language bar
+::0: floating
+::3: hidden
+::4: docked
+::this setting controls how the "feature" behaves,
+::but not whether or not it should behave.
+::reg add "HKCU\Software\Microsoft\CTF\LangBar" /v showstatus /t reg_dword /d 3 /f
 
 
 
