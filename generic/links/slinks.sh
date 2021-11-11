@@ -77,6 +77,7 @@ _2bin "$maintenancedir/tools/mssuspend/bin/mssuspend.exe" "$bindir"
 _2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 _2bin "$optdir/mstools/installlitec/litec" "$bindir/litec"
+_2bin "$optdir/mstools/installmycli/mycli" "$bindir/mycli"
 
 }
 
