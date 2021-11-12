@@ -27,7 +27,7 @@ function _update(){
 #_2bin "$progdir/mercurial/hg.exe"
 
 _2bin "$dopt/portablegit/bin/git.exe"
-_2bin "$dopt/emacs/bin/emacs.exe"
+#_2bin "$dopt/emacs/bin/emacs.exe"
 _2bin "$dopt/python3/python.exe" "$bindir/pythonwin.exe"
 _2bin "$dopt/python3/scripts/pip.exe"
 _2bin "$dopt/golang/bin/go.exe"
@@ -53,7 +53,7 @@ _2bin "$maintenancedir/extensa/misc/autokeys/autokeys.cmd" "$bindir/autokeys"
 _2bin "$maintenancedir/extensa/misc/crlf.sh" "$bindir/crlf"
 _2bin "$maintenancedir/extensa/misc/touchsh.sh" "$bindir/touchsh"
 _2bin "$maintenancedir/extensa/misc/iselevated.sh" "$bindir/iselevated"
-
+_2bin "$maintenancedir/extensa/patches/emacs.sh" "$bindir/emacs"
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
