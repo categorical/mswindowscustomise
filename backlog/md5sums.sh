@@ -15,6 +15,9 @@ _usage(){
 	    $0 -h
 	    $0 [--directory] directory
 	    $0 --check directory
+	EPILOGUE
+	    $0 software
+	    $0 --check software
 	EOF
 }
 
@@ -73,9 +76,9 @@ _check(){
 
 
 if [ -d "$1" ];then
-    set -- '--directory' "${@:1}" 
+    set -- '--directory' "$@" 
 elif [ -f "$1" ];then
-    set -- '--check' "${@:1}"
+    set -- '--check' "$@"
 fi
 case $1 in
     --directory)shift;_directoryupdate "$@";;
