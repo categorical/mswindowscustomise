@@ -5,8 +5,11 @@
 
 dthis="$(cd "$(dirname "$0")" && pwd)"
 reg_uninstall='HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall'
-reg32_uninstall='HKLM\SOFTWARE\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall'
+reg_uninstall32='HKLM\SOFTWARE\wow6432node\Microsoft\Windows\CurrentVersion\Uninstall'
 
+if [ "$is32bit" = 't' ];then
+    reg_uninstall="$reg_uninstall32"
+fi
 
 
 _list(){
@@ -37,22 +40,31 @@ _list(){
 
 }
 
-_get(){
+_search(){
     :
     local q="$1"
-    local v="$(_list \
-        |grep -i "$q"|head -n1|awk '{print $1}')"
-    printf '%s' "$v"
-}    
+    #local v="$(_list \
+    #    |grep -i "$q"|head -n1|awk '{print $1}')"
+    #printf '%s' "$v"
+    _list|grep --color -i "$q"
+}
+
+_get(){
+    :
+    reg query "$reg_uninstall\\$1"
+
+}
 
 
 _usage(){
     cat<<-EOF
 	SYNOPSIS
 	    $0 --list
-	    $0 --get q
+	    $0 --get guid
+	    $0 --search q
 	EPILOGUE
-	    $0 --get 'oracle vm'
+	    $0 --search 'oracle vm'
+	    is32bit=t $0 --list
 	EOF
 
 
@@ -60,11 +72,12 @@ _usage(){
 
 case $1 in
     --*|-*);;
-    *)if [ ! -z "$1" ];then set -- '--get' "$@";fi;;
+    *)if [ ! -z "$1" ];then set -- '--search' "$@";fi;;
 esac
 
 case $1 in
     --list)_list|sort;;
+    --search)shift;_search "$@";;
     --get)shift;_get "$@";;
     *)_usage;;
 esac
