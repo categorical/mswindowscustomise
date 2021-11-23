@@ -80,6 +80,7 @@ _2bin "$maintenancedir/misc/msversion.sh" "$bindir/msversion"
 _2bin "$maintenancedir/misc/msmod.sh" "$bindir/msmod"
 _2bin "$maintenancedir/backlog/robo.sh" "$bindir/robo"
 _2bin "$maintenancedir/backlog/md5sums.sh" "$bindir/md5sums"
+_2bin "$maintenancedir/backlog/uninstallstrings.sh" "$bindir/uninstallstrings"
 
 
 _2bin "$devdir/winaries/mssuspend/bin/mssuspend.exe" "$bindir"

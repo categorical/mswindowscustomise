@@ -17,16 +17,21 @@ _list(){
     mapfile -t -d $'\n' 'ks' \
         < <(reg query "$reg_uninstall"|sed 's/\r$//')
     for k in "${ks[@]}";do
-        local _guid="$(printf %s "$k" \
-            |sed -n 's/^[^{]*\({[-A-Z0-9]*}\)$/\1/p')"
+        #local _guid="$(printf %s "$k" \
+        #    |sed -n 's/^[^{]*\({[-A-Z0-9]*}\)$/\1/p')"
+        local _guid="${k##*\\}"
+        
         [ -z "$_guid" ] && continue
-        local v="$(reg query "$k" /v displayname \
-            |sed -n 's/^\s*displayname\s\+[A-Z_]*\s\+//p')"
+        local v="$(reg query "$k" \
+            |sed -n 's/^\s*displayname\s\+[A-Z_]*\s\+//ip')"
+        #local v="$(reg query "$k" \
+        #    |sed -n 's/^\s*uninstallstring\s\+[A-Z_]*\s\+//ip')"
+        [ -z "$v" ]&&continue
         _vs+=(["$_guid"]="$v")
     done
     
     for i in "${!_vs[@]}";do
-        printf '%s %s\n' "$i" "${_vs[$i]}"
+        printf '%-40s %s\n' "$i" "${_vs[$i]}"
     done
 
 
@@ -59,7 +64,7 @@ case $1 in
 esac
 
 case $1 in
-    --list)_list;;
+    --list)_list|sort;;
     --get)shift;_get "$@";;
     *)_usage;;
 esac
