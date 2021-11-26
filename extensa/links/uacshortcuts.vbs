@@ -48,6 +48,7 @@ searchable(progdir & "regfromapp\regfromapp.exe")
 searchable(progdir & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")
 searchable(progdir & "moninfo\moninfo.exe")
+searchable(dopt & "virtualbox\virtualbox.exe")
 
 searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2.exe")
