@@ -50,7 +50,10 @@ _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\svcutil.exe' "$bi
 #_2bin "$progdir/jdk/bin/jmap.exe"
 #_2bin "$progdir/autohotkey/autohotkeyu64.exe" "$bindir/ahk"
 #_2bin "$progdir/redis/redis-cli.exe"
+#
 
+_2bin "$progdir/virtualbox/virtualbox.exe"
+_2bin "$progdir/virtualbox/vboxmanage.exe"
 _2bin "$maintenancedir/generic/patches/emacs.sh" "$bindir/emacs"
 _2bin "$maintenancedir/generic/patches/vscode.sh" "$bindir/vscode"
 _2bin "$progdir/vscode/bin/code" "$bindir/code"

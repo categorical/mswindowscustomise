@@ -36,6 +36,7 @@ _2bin "$dopt/vlc/vlc.exe"
 _2bin "$dopt/7z/7z.exe"
 _2bin "$dopt/protoc/bin/protoc.exe"
 _2bin "$dopt/virtualbox/virtualbox.exe"
+_2bin "$dopt/virtualbox/vboxmanage.exe"
 
 
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
