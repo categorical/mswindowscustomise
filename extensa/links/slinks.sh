@@ -89,7 +89,8 @@ _2bin "$devdir/winaries/mssuspend/bin/mssuspend.exe" "$bindir"
 _2bin "$devdir/winaries/secho/bin/secho.exe" "$bindir"
 _2bin "$devdir/githubrepositories/gitapi"
 _2bin "$optdir/installyoutubedl/dltube"
-_2bin "$optdir/mstools/installmsrdp/wfreerdp/wfreerdp.exe"
+_2bin "$optdir/mstools/installmsrdp/win/wfreerdp.sh"
+_2bin "$dopt/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 
 
