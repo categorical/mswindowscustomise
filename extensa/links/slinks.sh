@@ -48,6 +48,7 @@ _2bin "$dopt/virtualbox/vboxmanage.exe"
 
 _2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/vscode"
 _2bin "$dopt/vscode/bin/code" "$bindir/code"
+#_2bin "$dopt/vscode/bin/codium" "$bindir/code"
 #_2bin "$maintenancedir/extensa/patches/vscode.sh" "$bindir/code"
 _2bin "$maintenancedir/extensa/misc/edithosts.sh" "$bindir/hosts"
 _2bin "$maintenancedir/extensa/misc/rubbish.sh" "$bindir/rubbish"
