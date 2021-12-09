@@ -37,7 +37,9 @@ _msmod(){
         sudo chmod -R 775 "$d"
         #chmod -R 775 "$d"
         fs=()
-        while IFS= read -d $'\0';do
+        # switch r to escape backslashes in a path might not be enough to have a "correct" path
+        # cygpath -u and cygpath -w of the same file can disagree in the file's permissions
+        while IFS= read -r -d $'\0';do
             fs+=("$REPLY")
         done< <(find "$d" -type f -print0)
         for f in "${fs[@]}";do
