@@ -26,7 +26,7 @@ _filemod(){
 
 
 _msmod(){
-    local d="$1"
+    local d="$1";d="$(cygpath -u "$d")"
     if [ -f "$d" ];then
         sudo chown `whoami` "$d"
         _filemod "$d"
