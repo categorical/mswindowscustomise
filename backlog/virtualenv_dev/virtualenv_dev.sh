@@ -17,4 +17,8 @@ fi
 [ -f "$_pip" ]||exit 1
 "$_pip" install -r "$(cygpath -w "$dthis/requirements.txt")"
 
+# vscode requires:
+#   - autopep8
+#   - pylint
+#
 
