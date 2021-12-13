@@ -1,0 +1,31 @@
+#/bin/bash
+
+thisdir=$(cd "$(dirname "$0")" && pwd)
+
+
+spathw=$(cygpath -w "$thisdir/uacregs.vbs")
+_update(){
+    cscript "$spathw"
+}
+
+
+_usage(){
+    local c0=$'\e[0m'
+    local c1=$'\e[1m'
+    cat <<-EOF
+	${c1}SYNOPSIS${c0}
+	    $0 ${c1}--update${c0}
+	EOF
+
+}
+
+
+case ${1:---update} in
+    --update)
+    _update
+    ;;
+    *)_usage;;
+esac
+
+
+

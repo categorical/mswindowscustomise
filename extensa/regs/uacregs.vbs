@@ -23,7 +23,7 @@ s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hid
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescavolume",0,"REG_DWORD"
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescapower",0,"REG_DWORD"
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescanetwork",0,"REG_DWORD"
-
+s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\usedefaulttile",1,"REG_DWORD"
 
 'enables msrdp to connect with en empty password
 s.RegWrite "HKLM\System\CurrentControlSet\Control\Lsa\limitblankpassworduse",0,"REG_DWORD"

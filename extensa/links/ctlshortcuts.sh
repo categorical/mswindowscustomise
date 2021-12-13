@@ -24,8 +24,8 @@ _usage(){
     local c1=$'\e[1m'
     cat <<-EOF
 	${c1}SYNOPSIS${c0}
-	    $0  ${c1}--clear${c0}
-	    $0  ${c1}--update${c0}
+	    $0 ${c1}--clear${c0}
+	    $0 ${c1}--update${c0}
 	EOF
 
 }
