@@ -41,6 +41,7 @@ _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tool
 _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\svcutil.exe'
 _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\NETFX 4.0 Tools\x64\svcutil.exe' "$bindir/svcutil2"
 _2bin 'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\svcutil.exe' "$bindir/svcutil3"
+_2bin 'c:\windows\system32\chcp.com' "$bindir/chcp"
 #_2bin 'C:\Program Files\dotnet\dotnet.exe'
 #_2bin "$progdir/wfreerdp/wfreerdp.exe"
 
