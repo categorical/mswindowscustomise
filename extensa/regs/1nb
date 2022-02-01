@@ -1,0 +1,65 @@
+
+
+
+
+--- SURPRISE ATTACK from microsoft's disk encryption ---
+
+microsoft turns on its encryption on behalf of user (seemingly) when
+    1 tpm enabled through bios
+    2 booted into ms windows
+    3 ?
+this happened (after rewiring motherboard) but has not been reproduced through bios settings
+
+apart from manually enabling tpm/secure boot through bios,
+resetting the motherboard causes tpm to be enabled as well
+
+suspecting bios entries include: fast boot, secure boot and tpm
+
+
+linux will not boot if any partitons to be mounted become locked by windows
+when logging into ms windows again,
+observer microsoft is busy encrypting all drives it finds
+manage-bde -status c:
+
+this command and the entire microsoft's "feature" might block,
+because windows is fully engaged encrypting your drives
+
+try run `manage-bde -off c:` to decrypt
+but I doubt this would have no effect on the filesystem even if the encryption is undone
+
+
+
+registry entry might prevent this uncalled encryption,
+but as the trigger is elusive and the madness is not reproducible
+nothing can be verified to have an effect
+
+reg query 'HKLM\SYSTEM\CurrentControlSet\Control\BitLocker'
+reg add 'HKLM\SYSTEM\CurrentControlSet\Control\BitLocker' /v preventdeviceencryption /t REG_DWORD /d 1 /f
+reg delete 'HKLM\SYSTEM\CurrentControlSet\Control\BitLocker' /v preventdeviceencryption /f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
