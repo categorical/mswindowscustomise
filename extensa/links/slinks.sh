@@ -2,9 +2,9 @@
 
 progdir="/cygdrive/d/programs"
 readonly bindir="/cygdrive/d/bin"
-maintenancedir="/cygdrive/d/dev/mswindowscustomise"
+maintenancedir="/cygdrive/d/devel/mswindowscustomise"
 optdir="/cygdrive/d/redev"
-devdir="/cygdrive/d/dev"
+devdir="/cygdrive/d/devel"
 dopt='/cygdrive/d/opt'
 
 function _2bin(){
