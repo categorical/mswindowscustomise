@@ -55,7 +55,8 @@ searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2md.exe")
 
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
-searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
+'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
+searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"dejavu sans mono"&chr(34)&" -"
 
 
 
