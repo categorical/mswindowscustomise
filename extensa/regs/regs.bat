@@ -52,8 +52,12 @@ reg add "hkcu\control panel\desktop" /v "enableperprocesssystemdpi" /d 0 /t reg_
 reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidefileext" /d 0 /t reg_dword /f
 reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidden" /d 1 /t reg_dword /f
 
-
-reg add "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /d 0 /t reg_dword /f
-
+:: Stops microsoft from reopening its things:
+:: has to be manual, settings
+::  :sign in options
+::  :use my sign in info to automatically finish setting up my device and reopen my apps after an update or restart
+::  :0
+::reg add "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /d 0 /t reg_dword /f
+::reg delete "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /f
 
 
