@@ -49,3 +49,11 @@ reg add "hkcu\control panel\bluetooth" /v "notification area icon" /d 0 /t reg_d
 reg add "hkcu\control panel\desktop" /v "enableperprocesssystemdpi" /d 0 /t reg_dword /f
 
 
+reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidefileext" /d 0 /t reg_dword /f
+reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidden" /d 1 /t reg_dword /f
+
+
+
+
+
+
