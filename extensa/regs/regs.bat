@@ -53,7 +53,7 @@ reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "h
 reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidden" /d 1 /t reg_dword /f
 
 
-
+reg add "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /d 0 /t reg_dword /f
 
 
 
