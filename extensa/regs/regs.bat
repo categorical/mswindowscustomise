@@ -53,7 +53,7 @@ reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "h
 reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "hidden" /d 1 /t reg_dword /f
 
 :: Stops microsoft from reopening its things:
-:: has to be manual, settings
+:: has to be clicking, settings
 ::  :sign in options
 ::  :use my sign in info to automatically finish setting up my device and reopen my apps after an update or restart
 ::  :0

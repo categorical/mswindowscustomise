@@ -38,10 +38,26 @@ _setelevated(){
     "$dcustomise/misc/cygsshd.sh";fi
 }
 
+_clicking(){
+    local c0="$(printf '\e[0m')";local c1="$(printf '\e[31m')"
+    local c2="$(printf '\e[32m')";local c3="$(printf '\e[33m')"
+    cat<<EOF
+1 gpedit.msc IMMEDIATELY after install
+    - enable    "disable ${c1}audoblay${c0}"
+    - enable    "disable ${c2}antibirus${c0}"
+    - disable   "${c3}audoupbate${c0}"
+2 to stop microsoft from reopening its things
+    - settings
+      sign in options
+      use my sign in info to audomatically finish setting up my device and reopen my apps after an update or restart
+EOF
+}
+
 _usage(){
     cat<<-EOF
 	SYNOPSIS:
 	    $0 --set
+	    $0 --clicking
 	EOF
     exit $1
 }
@@ -51,6 +67,7 @@ _usage(){
 while [ $# -gt 0 ];do case $1 in
     --set)_set;;
     --setelevated)_setelevated;;
+    --clicking)_clicking;;
     *)_usage 0;;
 esac;shift;done
 
