@@ -30,13 +30,13 @@ _setelevated(){
     "$dmaintenance/winfiles/ui.sh" --imageset
     "$dmaintenance/winfiles/ui.sh" --textset
     "$dmaintenance/winfiles/hosts.sh" --restore
-    "$dmaintenance/winfiles/deactivate.sh" --activate
-    
 
-    "$dcustomise/misc/cygsshd.sh"
- 
+    local f="$dmaintenance/winfiles/deactivate.sh"
+    if ! "$f" --activated;then "$f" --activate --yes;fi;f=
+
+    if ! sc query cygsshd|grep -i 'running'>/dev/null;then
+    "$dcustomise/misc/cygsshd.sh";fi
 }
-
 
 _usage(){
     cat<<-EOF
