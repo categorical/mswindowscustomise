@@ -1,5 +1,7 @@
 #/bin/bash
 
+
+_setup(){
 # Installs sshd and requires openssh of cygwin.
 
 
@@ -43,8 +45,31 @@ sudo net start cygsshd
 #username(cyg_server) and password are required to create an account to run sshd.
 #This observation is verified by this link,
 #https://www.mail-archive.com/cygwin@cygwin.com/msg159887.html.
+}
+
+_esed(){ printf '%s' "$1"|sed 's/[.[\*^$/]/\\&/g';}
+_config(){
+    local f='/etc/sshd_config'
+    local replace='authorizedkeysfile .ssh/authorised_keys'
+    local d=' \t';local find="$(sed "s/^\([^$d]*\).*$/\1/" <<<$replace)";find="$(_esed "$find")"
+    replace="$(_esed "$replace")"
+    sed -i "/^$find[$d].*$/I{h;s//$replace/};\${x;/^\$/{s//$replace/;H};x}" "$f"
+}
 
 
-
+_usage(){
+    cat <<EOF
+SYNOPSIS
+    $0 --setup
+    $0 --configure
+EOF
+    exit $1
+}
+[ $# -gt 0 ]||set -- -h
+while [ $# -gt 0 ];do case $1 in
+    --setup)_setup;;
+    --config)_config;;
+    *)_usage 0;;
+esac;shift;done
 
 

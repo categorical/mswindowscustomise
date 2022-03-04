@@ -8,7 +8,15 @@ dthis=$(cd "$(dirname "$0")" && pwd)
 droot=$(cd "$dthis/.." &&pwd)
 dmaintenance="$droot/msmaintenance"
 dcustomise="$droot/mswindowscustomise"
+dcustomisex="$droot/xcustomise"
 
+_ex15(){
+    
+    local v='ex15'
+    [ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
+
+    "$dcustomisex/0scripts/09conf.sh" --sshd
+}
 
 _set(){
     
@@ -35,7 +43,8 @@ _setelevated(){
     if ! "$f" --activated;then "$f" --activate --yes;fi;f=
 
     if ! sc query cygsshd|grep -i 'running'>/dev/null;then
-    "$dcustomise/misc/cygsshd.sh";fi
+    "$dcustomise/misc/cygsshd.sh" --setup;fi
+    "$dcustomise/misc/cygsshd.sh" --config
 }
 
 _clicking(){
@@ -49,7 +58,7 @@ _clicking(){
 2 to stop microsoft from reopening its things
     - settings
       sign in options
-      use my sign in info to audomatically finish setting up my device and reopen my apps after an update or restart
+      "use my sign in info to audomatically finish setting up my device and reopen my apps after an update or restart"
 EOF
 }
 
@@ -65,6 +74,7 @@ _usage(){
 
 [ $# -gt 0 ]||set -- -h
 while [ $# -gt 0 ];do case $1 in
+    --ex15)_ex15;;
     --set)_set;;
     --setelevated)_setelevated;;
     --clicking)_clicking;;
