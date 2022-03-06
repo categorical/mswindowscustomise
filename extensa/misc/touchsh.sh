@@ -10,6 +10,7 @@ _error(){ printf "\033[31merror: \033[0m%s\n" "$*";}
 _template(){
 cat <<'EOD'
 #!/bin/bash
+set -euo pipefail
 #_infof(){ local f=$1;shift;_info "$(printf "$f" "$@")";}
 #_info(){ printf "\033[96minfo: \033[0m%s\n" "$*";}
 #_errorf(){ local f=$1;shift;_error "$(printf "$f" "$@")";}
@@ -23,10 +24,13 @@ _usage(){
 	SYNOPSIS
 	    $0 -h
 	EOF
+    exit $1
 }
-case $1 in
-    *)_usage;;
-esac
+
+[ $# -gt 0 ]||set -- -h
+while [ $# -gt 0 ];do case $1 in
+    *)_usage 0;;
+esac;shift;done
 
 EOD
 }
