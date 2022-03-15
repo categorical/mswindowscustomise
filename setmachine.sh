@@ -35,9 +35,11 @@ _set(){
     "$dcustomise/misc/sethome.sh"
 
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
+    # TODO: cannot find 7z
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     
-    _packages
+    # TODO:
+    #_packages
     
     # TODO: sudo not in path
     sudo "$0" --setelevated
