@@ -25,7 +25,12 @@ _set(){
     "$dcustomise/extensa/links/slinks.sh"
     # TODO: 
     "$dcustomise/misc/sethome.sh"
-  
+
+    "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
+    
+    _packages
+    
+    # TODO: sudo not in path
     sudo "$0" --setelevated
        
 }
@@ -46,6 +51,19 @@ _setelevated(){
     "$dcustomise/misc/cygsshd.sh" --setup;fi
     "$dcustomise/misc/cygsshd.sh" --config
 }
+
+_packages(){
+    "$dmaintenance/opt/console2.sh" --install
+    "$dmaintenance/opt/console2.sh" --restore
+    "$dmaintenance/opt/portablegit.sh" --install
+    "$dmaintenance/opt/font.sh" --dejavu
+    "$dmaintenance/opt/sharpkeys.sh" --install
+    "$dmaintenance/mozilla/install.sh" --install
+    "$dmaintenance/mozilla/restore.sh" --restore
+    "$dmaintenance/mozilla/restore.sh" --restorepatch
+    
+}
+
 
 _clicking(){
     local c0="$(printf '\e[0m')";local c1="$(printf '\e[31m')"
