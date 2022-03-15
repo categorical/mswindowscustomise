@@ -27,6 +27,7 @@ _set(){
     "$dcustomise/misc/sethome.sh"
 
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
+    "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     
     _packages
     
