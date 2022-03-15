@@ -11,12 +11,20 @@ dcustomise="$droot/mswindowscustomise"
 dcustomisex="$droot/xcustomise"
 
 _ex15(){
-    
     local v='ex15'
     [ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
 
     "$dcustomisex/0scripts/09conf.sh" --sshd
 }
+
+_desk2(){
+    local v='desk2'
+    [ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
+
+    #"$dcustomisex/0scripts/09conf.sh" --sshd
+}
+
+
 
 _set(){
     
@@ -94,6 +102,7 @@ _usage(){
 [ $# -gt 0 ]||set -- -h
 while [ $# -gt 0 ];do case $1 in
     --ex15)_ex15;;
+    --desk2)_desk2;;
     --set)_set;;
     --setelevated)_setelevated;;
     --clicking)_clicking;;

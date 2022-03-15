@@ -33,6 +33,9 @@ s.RegWrite "HKLM\System\CurrentControlSet\Control\Lsa\limitblankpassworduse",0,"
 's.RegDelete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescahealth"
 'On Error GoTo 0
 
+' disables driver update
+s.regwrite "HKLM\software\microsoft\windows\currentversion\driversearching\searchorderconfig",0,"reg_dword"
+
 
 s.RegWrite "HKLM\software\policies\microsoft\windows\explorer\disablenotificationcenter",1,"REG_DWORD"
 
