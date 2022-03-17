@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+#asrock
+
+(new technology)
+ethernet
+    PCI\VEN_8086&DEV_1A1D&SUBSYS_1A1D1849&REV_11
+    Intel(R) Ethernet Connection (17) I219-V
+    
+    driver: www.intel.com
+    Wired_driver_27.0_x64.zip
+    Wired_driver_27.0_x64\Wired_driver_27.0_x64\PRO1000
+
+intel gna, i.e. gaussian and neural accelerator
+    PCI\VEN_8086&DEV_464F&SUBSYS_464F1849&REV_05
+    Intel(R) GNA Scoring Accelerator module
+    
+    driver: www.intel.com
+    GNA-Win10_Win11-3.0.0.1400.zip
+
+?
+    PCI\VEN_8086&DEV_7ACC&SUBSYS_7ACC1849&REV_11
+    Intel(R) LPSS: I2C Controller #0 - 7ACC
+    
+    driver: www.asrock.com
+    INF(v10.1.18836.8283)\DriverFiles\production\Windows10-x64
+    INF(v10.1.18836.8283).zip
+
+?
+    PCI\VEN_8086&DEV_7AA4&SUBSYS_7AA41849&REV_11
+    Intel(R) SPI (flash) Controller - 7AA4
+    
+    driver: www.asrock.com
+    INF(v10.1.18836.8283)\DriverFiles\production\Windows10-x64
+
+?
+    PCI\VEN_8086&DEV_7AA3&SUBSYS_7AA31849&REV_11
+    Intel(R) SMBus - 7AA3
+
+    driver: www.asrock.com
+    INF(v10.1.18836.8283)\DriverFiles\production\Windows10-x64
+ 
+
+
+

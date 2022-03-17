@@ -63,7 +63,7 @@ declare -a vs=(
     '\Microsoft\XblGameSave\XblGameSaveTask'
     '\Microsoft\Windows\Windows Error Reporting\QueueReporting'
     '\Microsoft\Windows\WindowsUpdate\Scheduled Start'    
-    '\Microsoft\Windows\UNP\RunUpdateNotificationMgr' # persistent
+    '\Microsoft\Windows\UNP\RunUpdateNotificationMgr' # persistent (not always)
     '\Microsoft\Windows\InstallService\ScanForUpdates'
     '\Microsoft\Windows\InstallService\ScanForUpdatesAsUser'
     '\Microsoft\Windows\Flighting\OneSettings\RefreshCache'
