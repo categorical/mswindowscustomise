@@ -34,7 +34,7 @@ s.RegWrite "HKLM\System\CurrentControlSet\Control\Lsa\limitblankpassworduse",0,"
 'On Error GoTo 0
 
 ' disables driver update. 0:disable
-s.RegWrite "HKLM\software\microsoft\windows\currentversion\driversearching\searchorderconfig",0,"REG_DWORD"
+'s.RegWrite "HKLM\software\microsoft\windows\currentversion\driversearching\searchorderconfig",0,"REG_DWORD"
 
 
 s.RegWrite "HKLM\software\policies\microsoft\windows\explorer\disablenotificationcenter",1,"REG_DWORD"
