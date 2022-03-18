@@ -15,7 +15,7 @@ reg query "HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" /
 ::reg delete "HKEY_CURRENT_USER\Environment" /v GOPATH /f
 reg add "HKEY_CURRENT_USER\Environment" /v GOPATH /d "d:\godev" /f
 set "mspath="
-set "mspath=%mspath%%%USERPROFILE%%\AppData\Local\Microsoft\WindowsApps;"
+::set "mspath=%mspath%%%USERPROFILE%%\AppData\Local\Microsoft\WindowsApps;"
 set "mspath=%mspath%d:\bin;"
 set "mspath=%mspath%d:\sbin;"
 set "mspath=%mspath%d:\opt\portablegit\bin;"
