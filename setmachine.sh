@@ -2,7 +2,7 @@
 set -euo pipefail
 _infof(){ local f=$1;shift;printf "\033[96minfo: \033[0m%s\n" "$(printf "$f" "$@")";}
 _errorf(){ local f=$1;shift;printf "\033[91merror: \033[0m%s\n" "$(printf "$f" "$@")";}
-_onexit(){ _infof 'exit: %d' $?;};trap _onexit EXIT
+_onexit(){ printf 'exit: %d\n' $? >&2;};trap _onexit EXIT
 
 dthis=$(cd "$(dirname "$0")" && pwd)
 droot=$(cd "$dthis/.." &&pwd)
