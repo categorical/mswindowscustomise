@@ -31,16 +31,13 @@ _set(){
     "$dmaintenance/winfiles/env.sh" --set
     "$dcustomise/extensa/regs/regs.bat" 
     "$dcustomise/extensa/links/slinks.sh"
-    # TODO: 
+    eval "$("$dmaintenance/winfiles/env.sh" --setbash)"
+    
     "$dcustomise/misc/sethome.sh"
-
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
-    # TODO: cannot find 7z
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     
     _packages
-    
-    # TODO: sudo not in path
     sudo "$0" --setelevated
 }
 _setelevated(){
@@ -68,6 +65,7 @@ _packages(){
     "$dmaintenance/opt/portablegit.sh" --fromscratch
     "$dmaintenance/opt/font.sh" --fromscratch 
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
+    "$dmaintenance/opt/python3.sh" --fromscratch
     "$dmaintenance/mozilla/install.sh" --fromscratch
     
 }
