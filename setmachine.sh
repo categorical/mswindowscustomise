@@ -2,7 +2,7 @@
 set -euo pipefail
 _infof(){ local f=$1;shift;printf "\033[96minfo: \033[0m%s\n" "$(printf "$f" "$@")";}
 _errorf(){ local f=$1;shift;printf "\033[91merror: \033[0m%s\n" "$(printf "$f" "$@")";}
-_onexit(){ printf 'exit: %d' $?;};trap _onexit EXIT
+_onexit(){ _infof 'exit: %d' $?;};trap _onexit EXIT
 
 dthis=$(cd "$(dirname "$0")" && pwd)
 droot=$(cd "$dthis/.." &&pwd)
@@ -38,12 +38,10 @@ _set(){
     # TODO: cannot find 7z
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     
-    # TODO:
-    #_packages
+    _packages
     
     # TODO: sudo not in path
     sudo "$0" --setelevated
-       
 }
 _setelevated(){
     "$dcustomise/extensa/regs/ctluacregs"
@@ -54,24 +52,23 @@ _setelevated(){
     "$dmaintenance/winfiles/ui.sh" --imageset
     "$dmaintenance/winfiles/ui.sh" --textset
     "$dmaintenance/winfiles/hosts.sh" --restore
-
     local f="$dmaintenance/winfiles/deactivate.sh"
     if ! "$f" --activated;then "$f" --activate --yes;fi;f=
 
     if ! sc query cygsshd|grep -i 'running'>/dev/null;then
     "$dcustomise/misc/cygsshd.sh" --setup;fi
-    "$dcustomise/misc/cygsshd.sh" --config
+    "$dcustomise/misc/cygsshd.sh" --configure
+    
+    
+    "$dmaintenance/winfiles/msmod_ssh.sh" -s
 }
 
 _packages(){
-    "$dmaintenance/opt/console2.sh" --install
-    "$dmaintenance/opt/console2.sh" --restore
-    "$dmaintenance/opt/portablegit.sh" --install
-    "$dmaintenance/opt/font.sh" --dejavu
-    "$dmaintenance/opt/sharpkeys.sh" --install
-    "$dmaintenance/mozilla/install.sh" --install
-    "$dmaintenance/mozilla/restore.sh" --restore
-    "$dmaintenance/mozilla/restore.sh" --restorepatch
+    "$dmaintenance/opt/console2.sh" --fromscratch
+    "$dmaintenance/opt/portablegit.sh" --fromscratch
+    "$dmaintenance/opt/font.sh" --fromscratch 
+    "$dmaintenance/opt/sharpkeys.sh" --fromscratch
+    "$dmaintenance/mozilla/install.sh" --fromscratch
     
 }
 

@@ -1,17 +1,7 @@
 #!/bin/bash
 
 
-
-
-
-_usage(){
-    cat<<-EOF
-	SYNOPSYS
-	    $0 FILE
-	    $0 DIRECTORY
-
-	EOF
-}
+set -euo pipefail
 
 _filemod(){
     local f="$1"
@@ -49,12 +39,20 @@ _msmod(){
 }
 
 
-if [ -z "$1" ]||[ ! -e "$1" ];then
-    _usage
-    exit 1
-fi
+_usage(){
+    cat<<-EOF
+	SYNOPSYS
+	    $0 FILE
+	    $0 DIRECTORY
 
-_msmod "$1"
+	EOF
+    exit $1
+}
 
+[ $# -gt 0 ]||set -- -h
+while [ $# -gt 0 ];do case "$1" in
+    -h)_usage 0;;
+    *)_msmod "$1";break;;
+esac;shift;done
 
 

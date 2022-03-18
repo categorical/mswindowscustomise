@@ -48,13 +48,42 @@ sudo net start cygsshd
 }
 
 _esed(){ printf '%s' "$1"|sed 's/[.[\*^$/]/\\&/g';}
-_config(){
-    local f='/etc/sshd_config'
-    local replace='authorizedkeysfile .ssh/authorised_keys'
+_configure(){
+    
+    _sub '/etc/sshd_config' 'authorizedkeysfile .ssh/authorised_keys'
+
+    _sub '/etc/ssh_config' 'hashknownhosts no'
+    _sub '/etc/ssh_config' 'stricthostkeychecking no'
+    _sub '/etc/ssh_config' 'updatehostkeys no'
+    _sub '/etc/ssh_config' 'pubkeyacceptedkeytypes +ssh-rsa'
+
+    _reload
+}
+_sub(){
+    local f="$1"
+    local replace="$2"
     local d=' \t';local find="$(sed "s/^\([^$d]*\).*$/\1/" <<<$replace)";find="$(_esed "$find")"
     replace="$(_esed "$replace")"
-    sed -i "/^$find[$d].*$/I{h;s//$replace/};\${x;/^\$/{s//$replace/;H};x}" "$f"
+
+
+    #sed -i "/^$find[$d].*$/I{h;s//$replace/};\${x;/^\$/{s//$replace/;H};x}" "$f"
+    
+    
+    # a bug?
+    #
+    # $ ls -la /etc/sshd_config
+    #   -rw-r--r-- 1 SYSTEM Administrators 3096 Mar 18 19:55 /etc/sshd_config
+    # $ sudo sed -i ...
+    #   sed: preserving permissions for ‘/etc/sedw2Bjql’: Permission denied
+    # $ sed -i ...
+    #   -rw-r--r-- 1 `whoami` Administrators 3096 Mar 18 19:59 /etc/sshd_config
+    #   
+    local g="$(mktemp)";trap '(set -x;rm "$g");trap - RETURN' RETURN
+    sed "/^$find[$d].*$/I{h;s//$replace/};\${x;/^\$/{s//$replace/;H};x}" "$f">"$g"
+    sudo bash -c "cat $g|tee $f >/dev/null"
 }
+
+_reload(){ sudo bash -c 'sc stop cygsshd;sc start cygsshd';}
 
 
 _usage(){
@@ -62,13 +91,15 @@ _usage(){
 SYNOPSIS
     $0 --setup
     $0 --configure
+    $0 --reload
 EOF
     exit $1
 }
 [ $# -gt 0 ]||set -- -h
 while [ $# -gt 0 ];do case $1 in
     --setup)_setup;;
-    --config)_config;;
+    --configure)_configure;;
+    --reload)_reload;;
     *)_usage 0;;
 esac;shift;done
 
