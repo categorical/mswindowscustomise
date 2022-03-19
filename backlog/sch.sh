@@ -9,13 +9,6 @@ _errorf(){ local f=$1;shift;printf "\033[91merror: \033[0m%s\n" "$(printf "$f" "
 _warnf(){ local f=$1;shift;printf "\033[33mwarning: \033[0m%s\n" "$(printf "$f" "$@")";}
 #dthis="$(dirname "$(readlink -f "$0")")"
 dthis="$(cd "$(dirname "$0")"&&pwd)"
-_usage(){
-	cat<<-EOF
-	SYNOPSIS
-	    $0 -h
-	EOF
-    exit $1
-}
 
 _list(){
     
