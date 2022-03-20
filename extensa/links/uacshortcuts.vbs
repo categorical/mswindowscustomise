@@ -51,6 +51,8 @@ searchable(progdir & "moninfo\moninfo.exe")
 searchable(dopt & "virtualbox\virtualbox.exe")
 searchable(dopt & "console2\console.exe")
 searchable(dopt & "winspy\winspy.exe")
+searchable(dopt & "msiafterburner\msiafterburner.exe")
+'searchable(dopt & "rtss\rtss.exe")
 
 searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2.exe")
