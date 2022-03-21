@@ -58,6 +58,7 @@ _setelevated(){
     
     
     "$dmaintenance/winfiles/msmod_ssh.sh" -s
+    #"$dcustomise/extensa/misc/bcd.sh" -s -m
 }
 
 _packages(){
