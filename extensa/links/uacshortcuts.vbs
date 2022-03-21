@@ -40,7 +40,7 @@ End Function
 
 
 'searchable(progdir & "vlc\vlc.exe")
-searchable(progdir & "deluge\deluge.exe")
+searchable(dopt & "deluge\deluge.exe")
 searchable(dopt & "npp\notepad++.exe")
 searchable(dopt & "emacs\bin\runemacs.exe")
 searchable(dopt & "mozillafirefox\firefox.exe")

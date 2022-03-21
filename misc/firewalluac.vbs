@@ -21,3 +21,24 @@ s.Run "netsh advfirewall firewall add rule name=" _
 
 
 
+
+n="libtorrent"
+ports="16880-16889"
+s.Run "netsh advfirewall firewall delete rule name="&chr(34)&n&chr(34),0,True
+s.Run "netsh advfirewall firewall add rule name=" _
+    &Chr(34)&n&chr(34)&" dir=in protocol=udp " _
+    &"localport="&chr(34)&ports&chr(34) _
+    &" action=allow profile=any",0,True
+
+n="libtorrent_tcp"
+s.Run "netsh advfirewall firewall delete rule name="&chr(34)&n&chr(34),0,True
+s.Run "netsh advfirewall firewall add rule name=" _
+    &Chr(34)&n&chr(34)&" dir=in protocol=tcp " _
+    &"localport="&chr(34)&ports&chr(34) _
+    &" action=allow profile=any",0,True
+
+
+
+
+
+
