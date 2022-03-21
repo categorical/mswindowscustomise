@@ -68,6 +68,7 @@ _packages(){
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
     "$dmaintenance/opt/python3.sh" --fromscratch
     "$dmaintenance/mozilla/install.sh" --fromscratch
+    "$dmaintenance/opt/vlc.sh" --fromscratch
     
 }
 
