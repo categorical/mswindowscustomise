@@ -9,7 +9,8 @@ dopt='/cygdrive/d/opt'
 
 function _2bin(){
 	local -r f=$1
-	local -r dest=${2:-$bindir}
+	#local -r dest=${2:-$bindir}
+    local -r dest=${2:-"$bindir/$(basename "${f%.sh}")"}
 	[ ! -f "$f" ] || (set -x;ln -sf "$f" "$dest")
 }
 
@@ -61,6 +62,8 @@ _2bin "$maintenancedir/extensa/patches/emacs.sh" "$bindir/emacs"
 _2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
 _2bin "$maintenancedir/backlog/virtualenv_dev/virtualenv_dev.sh" "$bindir/virtualenv_dev"
+_2bin "$maintenancedir/backlog/msrunonstart.sh" "$bindir/msrunonstart"
+_2bin "$maintenancedir/backlog/msnonsense.sh" "$bindir/msnonsense"
 #_2bin "$maintenancedir/extensa/patches/msvc.sh" "$bindir/msvc"
 _2bin "$maintenancedir/patches/msvc.sh" "$bindir/msvc"
 #_2bin "$maintenancedir/patches/mvn.sh" "$bindir/mvn"
