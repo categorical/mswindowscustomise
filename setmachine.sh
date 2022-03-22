@@ -76,6 +76,7 @@ _packages(){
 _clicking(){
     local c0="$(printf '\e[0m')";local c1="$(printf '\e[31m')"
     local c2="$(printf '\e[32m')";local c3="$(printf '\e[33m')"
+    local c4="$(printf '\e[9m')"
     cat<<EOF
 1 gpedit.msc IMMEDIATELY after install
     - enable    "disable ${c1}audoblay${c0}"
@@ -85,6 +86,11 @@ _clicking(){
     - settings
       sign in options
       "use my sign in info to audomatically finish setting up my device and reopen my apps after an update or restart"
+3 to dismiss startmenu things on the edge
+    - startmenu
+      mousebutton3
+      personalise this list
+      ${c4}settings, documents, pictures${c0}
 EOF
 }
 
