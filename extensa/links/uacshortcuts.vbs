@@ -57,6 +57,8 @@ searchable(dopt & "msiafterburner\msiafterburner.exe")
 searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2.exe")
 'searchable(progdir & "redalert2\ra2md.exe")
+searchable(dopt & "charles\charles.exe")
+
 
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
