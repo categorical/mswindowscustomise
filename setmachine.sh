@@ -66,6 +66,7 @@ _packages(){
     "$dmaintenance/opt/portablegit.sh" --fromscratch
     "$dmaintenance/opt/font.sh" --fromscratch 
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
+    # network access
     "$dmaintenance/opt/python3.sh" --fromscratch
     "$dmaintenance/mozilla/install.sh" --fromscratch
     "$dmaintenance/opt/vlc.sh" --fromscratch
