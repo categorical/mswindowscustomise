@@ -65,6 +65,9 @@ searchable(dopt & "charles\charles.exe")
 searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"dejavu sans mono"&chr(34)&" -"
 
 
+searchablenargs dopt & "crystaldiskinfo\diskinfo64.exe","diskinfo",""
+searchablenargs dopt & "crystaldiskmark\diskmark64.exe","diskmark",""
+searchablenargs dopt & "cpuz\cpuz_x64.exe","cpuz",""
 
 searchablenargs dopt & "vscode\code.exe","vscode",""
 searchablenargs progdir & "opera\launcher.exe","operanoupdate", _

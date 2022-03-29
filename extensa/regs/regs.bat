@@ -60,4 +60,14 @@ reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "h
 ::reg add "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /d 0 /t reg_dword /f
 ::reg delete "hkcu\software\microsoft\windows nt\currentversion\winlogon" /v "restartapps" /f
 
+:: Stops microsoft beeping at a user.
+::reg query "hkcu\appevents\schemes\apps\.default\windowsuac\.current"
+:: (Default)    REG_SZ    C:\Windows\media\Windows User Account Control.wav
+reg delete "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve /f
+
+
+
+
+
+
 
