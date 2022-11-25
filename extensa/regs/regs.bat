@@ -66,8 +66,4 @@ reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "h
 reg delete "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve /f
 
 
-
-
-
-
-
+reg add "hkcu\control panel\international" /v stimeformat /d "HH:mm:ss" /t reg_sz /f
