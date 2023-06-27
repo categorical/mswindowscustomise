@@ -63,7 +63,10 @@ reg add "hkcu\software\microsoft\windows\currentversion\explorer\advanced" /v "h
 :: Stops microsoft beeping at a user.
 ::reg query "hkcu\appevents\schemes\apps\.default\windowsuac\.current"
 :: (Default)    REG_SZ    C:\Windows\media\Windows User Account Control.wav
-reg delete "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve /f
-
+for /f "delims=" %%a in ('
+reg query "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve
+')do set "out=%%a"
+if not "%out%"=="    (Default)    REG_SZ    (value not set)" (
+reg delete "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve /f)
 
 reg add "hkcu\control panel\international" /v stimeformat /d "HH:mm:ss" /t reg_sz /f

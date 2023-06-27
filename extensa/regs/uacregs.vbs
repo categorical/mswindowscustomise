@@ -135,6 +135,9 @@ s.RegDelete "HKCR\Directory\shell\AnyCode\command\"
 s.RegDelete "HKCR\Directory\shell\AnyCode\"
 On Error GoTo 0
 
+'Prevents microsoft occasional pop up in case public smb share.
+'s.RegWrite "HKLM\software\policies\microsoft\windows\lanmanworkstation\allowinsecureguestauth",1,"REG_DWORD"
+
 'Shows/hides items at explorer naviation pane.
 'libraries
 

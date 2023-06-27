@@ -1,0 +1,29 @@
+
+
+
+steps to set machine
+  - mount pkg drive
+    > net use s: \\10.2.2.2\b "" /user:
+    $ net use s: '\\10.2.2.2\b' '' /user:
+
+  - microsoft needs insecure pkg drive or pops up when run executable
+    $ v='hklm\software\policies\microsoft\windows\lanmanworkstation'
+    $ reg query "$v"
+    $ sudo reg add "$v" /v allowinsecureguestauth /t reg_dword /d 0 /f
+    reboot to take effect
+    alternatively, gpedit
+        computer configuration
+        administrative templates
+        network
+        lanman workstation
+        enable insecure guest logons
+        enabled
+
+  - install cygwin (curl inetutils openssh rsync vim)
+    from    /cygdrive/s/cygwin64_cache
+    to      /cygdrive/d/cygwin64
+
+  - install 7z
+    to      /cygdrive/d/opt/7z
+
+  - $ ./setmachine.sh --set
