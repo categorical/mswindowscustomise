@@ -40,13 +40,14 @@ _ls(){
 }
 
 _kill(){
-    
+    reg delete 'hkcu\software\microsoft\windows\currentversion\run' /v wechat /f||:
+    reg delete 'hkcu\software\microsoft\windows\currentversion\explorer\startupapproved\run' /v wechat /f||:
     sudo "$0" --killelevated
 }
 _killelevated(){
     #HKEY_LOCAL_MACHINE\software\wow6432node\microsoft\windows\currentversion\run
     #BCSSync    REG_SZ    "C:\Program Files (x86)\Microsoft Office\Office14\BCSSync.exe" /DelayServices
-    reg delete 'hklm\software\wow6432node\microsoft\windows\currentversion\run' /v bcssync /f   
+    reg delete 'hklm\software\wow6432node\microsoft\windows\currentversion\run' /v bcssync /f||:
 }
 
 _usage(){
