@@ -27,7 +27,7 @@ _list(){
 
 _kill(){
     for v in "${vs[@]}" "${ws[@]}";do v="$(cygpath -u "$v")"
-        test -f "$v"&&_dry rm "$v"
+        test -f "$v"&&_dry rm -f "$v"
         test -d "$v"&&_dry rm -r "$v"
     done||:
 }

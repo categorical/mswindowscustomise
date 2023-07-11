@@ -135,6 +135,9 @@ s.RegDelete "HKCR\Directory\shell\AnyCode\command\"
 s.RegDelete "HKCR\Directory\shell\AnyCode\"
 On Error GoTo 0
 
+'removes quick access
+s.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\hubmode",1,"REG_DWORD"
+
 'Prevents microsoft occasional pop up in case public smb share.
 's.RegWrite "HKLM\software\policies\microsoft\windows\lanmanworkstation\allowinsecureguestauth",1,"REG_DWORD"
 
