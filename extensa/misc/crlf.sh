@@ -5,6 +5,7 @@ _include=(
 '*.bat' '*.sh' '*.py' '*.el'
 '*.css'
 '.gitignore' '.hgignore'
+'*.config'
 )
 
 _find(){

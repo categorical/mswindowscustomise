@@ -13,6 +13,7 @@ Set s=CreateObject("WScript.Shell")
 
 
 s.RegWrite "HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy","RemoteSigned"
+s.RegWrite "HKCU\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy","RemoteSigned"
 
 s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoStartMenuMorePrograms",1,"REG_DWORD"
 
