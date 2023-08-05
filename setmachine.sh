@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
-_infof(){ local f=$1;shift;printf "\033[96minfo: \033[0m%s\n" "$(printf "$f" "$@")";}
-_errorf(){ local f=$1;shift;printf "\033[91merror: \033[0m%s\n" "$(printf "$f" "$@")";}
-_onexit(){ printf 'exit: %d\n' $? >&2;};trap _onexit EXIT
+_onexit(){ printf 'exit: %d\n' $?>&2;};trap _onexit EXIT
+_inf(){ printf '\e[36mI: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;}
+_Err(){ printf '\e[31mE: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;exit 1;}
 
 dthis=$(cd "$(dirname "$0")" && pwd)
 droot=$(cd "$dthis/.." &&pwd)
@@ -23,9 +23,11 @@ _desk2(){
 
     #"$dcustomisex/0scripts/09conf.sh" --sshd
 }
-
-
-
+_setname(){
+    local n="$(cat $HOME/name)"
+    [[ $n =~ ^[a-z0-9]{4,10}$ ]]||_Err "$(declare -p n)"
+    #[ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
+}
 _set(){
     
     "$dmaintenance/winfiles/env.sh" --set
@@ -60,6 +62,7 @@ _setelevated(){
     
     "$dmaintenance/winfiles/msmod_ssh.sh" -s
     #"$dcustomise/extensa/misc/bcd.sh" -s -m
+    _setname
 }
 
 _packages(){
@@ -95,24 +98,19 @@ _clicking(){
       ${c4}settings, documents, pictures${c0}
 EOF
 }
-
-_usage(){
-    cat<<-EOF
+_main(){ _usage(){ cat<<-EOF
 	SYNOPSIS:
 	    $0 --set
 	    $0 --clicking
 	EOF
-    exit $1
-}
-
-
-[ $# -gt 0 ]||set -- -h
-while [ $# -gt 0 ];do case $1 in
-    --ex15)_ex15;;
-    --desk2)_desk2;;
-    --set)_set;;
-    --setelevated)_setelevated;;
-    --clicking)_clicking;;
-    *)_usage 0;;
-esac;shift;done
-
+    exit $1;}
+    [ $# -gt 0 ]||_usage 1;while [ $# -gt 0 ];do case $1 in
+        --ex15)_ex15;;
+        --desk2)_desk2;;
+        --set)_set;;
+        --setelevated)_setelevated;;
+        --clicking)_clicking;;
+        --setname)_setname;;
+        -h)_usage 0;;*)_usage 1
+    esac;shift;done
+};_main "$@"
