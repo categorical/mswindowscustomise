@@ -16,17 +16,15 @@ _ex15(){
 
     "$dcustomisex/0scripts/09conf.sh" --sshd
 }
-
 _desk2(){
     local v='desk2'
     [ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
-
     #"$dcustomisex/0scripts/09conf.sh" --sshd
 }
 _setname(){
-    local n="$(cat $HOME/name)"
+    local n;n="$(cat $HOME/name)"
     [[ $n =~ ^[a-z0-9]{4,10}$ ]]||_Err "$(declare -p n)"
-    #[ "$(hostname)" = "$v" ]||"$dmaintenance/winfiles/sethostname.sh" "$v"
+    [ "$(hostname)" = "$n" ]||"$dmaintenance/winfiles/sethostname.sh" "$n"
 }
 _set(){
     
@@ -76,8 +74,6 @@ _packages(){
     "$dmaintenance/opt/vlc.sh" --fromscratch
     
 }
-
-
 _clicking(){
     local c0="$(printf '\e[0m')";local c1="$(printf '\e[31m')"
     local c2="$(printf '\e[32m')";local c3="$(printf '\e[33m')"
@@ -102,6 +98,7 @@ _main(){ _usage(){ cat<<-EOF
 	SYNOPSIS:
 	    $0 --set
 	    $0 --clicking
+	    $0 --setname
 	EOF
     exit $1;}
     [ $# -gt 0 ]||_usage 1;while [ $# -gt 0 ];do case $1 in
