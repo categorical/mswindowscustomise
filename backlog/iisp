@@ -1,0 +1,3 @@
+#!/bin/bash
+g=$(cygpath -u 'C:\Windows\System32\inetsrv\appcmd.exe')
+sudo "$g" list wp

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-f=$(cygpath -u 'C:\Windows\System32\inetsrv\appcmd.exe')
-sudo "$f" list wp
-
-
-
-

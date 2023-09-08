@@ -79,7 +79,7 @@ _2bin 'c:\program files (x86)\microsoft visual studio\2019\enterprise\msbuild\cu
 _2bin '/cygdrive/c/windows/system32/pnputil.exe'
 _2bin '/cygdrive/c/windows/system32/dism.exe'
 
-
+_2bin "$maintenancedir/backlog/iisp"
 
 
 _2bin "$maintenancedir/misc/restartexplorer.bat" "$bindir/restartexplorer"
