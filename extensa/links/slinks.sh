@@ -103,7 +103,7 @@ _2bin "$devdir/msmaintenance/opt/steam.sh" "$bindir/steam"
 _2bin "$devdir/msmaintenance/opt/rtss.sh" "$bindir/rtss"
 _2bin "$devdir/msmaintenance/opt/msiafterburner.sh" "$bindir/msiafterburner"
 _2bin "$devdir/msmaintenance/opt/gog.sh"
-_2bin "$devdir/msmaintenance/opt/charles.sh"
+_2bin "$devdir/msmaintenance/opt/charlesproxy.sh"
 
 _2bin "$optdir/installyoutubedl/dltube"
 _2bin "$optdir/mstools/installmsrdp/win/wfreerdp.sh"
