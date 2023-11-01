@@ -7,6 +7,8 @@ _Err(){ printf '\e[31mE: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;exit 1;}
 thisdir=$(cd "$(dirname "$0")" && pwd)
 
 _rw(){
+    if net session&>/dev/null;then _Err 'runas';fi
+
     local s='b:'
     local bina="$(cygpath -S)/mount.exe"
     net use
@@ -61,6 +63,8 @@ _nfsc(){
     # https://groups.google.com/g/puppet-users/c/q71sP3TZZXQ/m/nGnCM75HRrcJ
 }
 _ro(){
+    if net session&>/dev/null;then _Err 'runas';fi
+
     local s='s:'
     case ${isnop-} in t)return;esac
 
@@ -79,6 +83,7 @@ _ro(){
     )"
     bash -c "$c";sudo bash -c "$c"
 }
+
 _main(){ _usage(){ cat<<-EOF
 	SYNOPSIS:
 	    $0 --rw|--ro [-u]
