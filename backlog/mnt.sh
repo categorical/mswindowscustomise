@@ -32,17 +32,33 @@ _rwuid(){
     sudo reg add "$c" /f /d 1000 /t reg_dword /v "$b"
 }
 _nfsc(){
-    local n='clientfornfs-infrastructure'
+    local n=(
+    'clientfornfs-infrastructure'
+    'servicesfornfs-clientonly'
+    )
     local bina="$(cygpath -S)/dism.exe"
     #sudo powershell -c "get-windowsoptionalfeature -online -featurename '$n'"
-    sudo "$bina" /online /get-featureinfo "/featurename:$n"
+
+    local r i;for((i=0;i<${#n[@]};i++));do
+    sudo "$bina" /online /get-featureinfo "/featurename:${n[i]}"
+    done
     case ${isnop-} in t)return;esac
     case ${isu-} in t)
+    for n in "${n[@]}";do
     # need reboot
-    sudo "$bina" /norestart /online /disable-feature "/featurename:$n"
+    sudo "$bina" /norestart /online /disable-feature \
+        "/featurename:$n"||r=$?
+    done
     return
     esac
-    sudo "$bina" /online /enable-feature "/featurename:$n"
+    i=${#n[@]};for((;i>0;i--));do
+    sudo "$bina" /norestart /online /enable-feature \
+        "/featurename:${n[i-1]}"||r=$?
+    done
+    # assert r in {194,0}
+    # 0x0bc2    3010 ERROR_SUCCESS_REBOOT_REQUIRED
+    # 0xc2      194
+    # https://groups.google.com/g/puppet-users/c/q71sP3TZZXQ/m/nGnCM75HRrcJ
 }
 _ro(){
     local s='s:'
