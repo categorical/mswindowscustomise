@@ -72,7 +72,7 @@ s.RegWrite "HKEY_CLASSES_ROOT\batfile\shell\edit\command\","D:\opt\npp\notepad++
 s.RegWrite "HKEY_CLASSES_ROOT\VBSFile\Shell\Edit\Command\","D:\opt\npp\notepad++.exe ""%1"""
 s.RegWrite "HKEY_CLASSES_ROOT\cmdfile\shell\edit\command\","D:\opt\npp\notepad++.exe ""%1"""
 s.RegWrite "HKCR\Microsoft.PowerShellScript.1\Shell\Edit\Command\","D:\opt\npp\notepad++.exe ""%1"""
-
+s.RegWrite "HKCR\blendfile\shell\open\command\","d:\opt\blender\blender.exe ""%1""","REG_SZ"
 
 's.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir (x86)","d:\rubbish"
 's.RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ProgramFilesDir","d:\rubbish"
@@ -158,13 +158,9 @@ s.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\hubmode",1,"
 
 
 
-
-
 'Creates an empty key "bar".
 's.RegWrite "HKCU\foo\bar\qux","qux"
 'WScript.Echo s.RegRead("HKCU\foo\bar\qux")
 's.RegDelete "HKCU\foo\bar\qux"
 's.RegDelete "HKCU\foo\bar\"
 's.RegDelete "HKCU\foo\"
-
-
