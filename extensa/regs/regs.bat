@@ -69,4 +69,9 @@ reg query "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve
 if not "%out%"=="    (Default)    REG_SZ    (value not set)" (
 reg delete "hkcu\appevents\schemes\apps\.default\windowsuac\.current" /ve /f)
 
-reg add "hkcu\control panel\international" /v stimeformat /d "HH:mm:ss" /t reg_sz /f
+reg add "hkcu\control panel\international" /f /d "HH:mm:ss" /t reg_sz /v stimeformat
+
+:: 1809 "weve turned on storage nonsense"
+set "b=hkcu\software\microsoft\windows\currentversi"
+set "b=%b%on\storagesense\parameters\storagepolicy"
+reg add "%b%" /f /d 0 /t reg_dword /v 01

@@ -38,7 +38,8 @@ _2bin "$dopt/7z/7z.exe"
 _2bin "$dopt/protoc/bin/protoc.exe"
 _2bin "$dopt/virtualbox/virtualbox.exe"
 _2bin "$dopt/virtualbox/vboxmanage.exe"
-
+_2bin "$dopt/bina/psexec.sh"
+_2bin "$dopt/dotnet/dotnet.exe"
 
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
@@ -110,6 +111,7 @@ _2bin "$optdir/mstools/installmsrdp/win/wfreerdp.sh"
 _2bin "$dopt/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 
+_2bin "$maintenancedir/backlog/outt.sh" "$bindir/outt"
 
 }
 
