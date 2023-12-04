@@ -111,7 +111,7 @@ _2bin "$optdir/mstools/installmsrdp/win/wfreerdp.sh"
 _2bin "$dopt/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 
-_2bin "$maintenancedir/backlog/outt.sh" "$bindir/outt"
+_2bin "$maintenancedir/backlog/etrn.sh" "$bindir/etrn"
 
 }
 

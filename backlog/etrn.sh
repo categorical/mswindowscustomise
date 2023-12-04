@@ -10,7 +10,7 @@ declare -a pfx=(
 "$HOME:/home/$id"
 "/cygdrive/d:/home/$id"
 )
-rmt=outt
+rmt=etrn
 _rx(){ _setvar "$1"
     local b="$out/$nam"
     echo "[ -e '$b' ]"|ssh "$rmt" bash||_Err 'not found %s' "$b"
