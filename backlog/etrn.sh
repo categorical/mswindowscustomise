@@ -38,17 +38,19 @@ _setvar(){
 }
 _main(){ _usage(){ cat<<-EOF
 	SYNOPSIS:
-	    $0 [-n] -rx|-tx FLE|DIR
+	    $0 [-n] -rx|-tx FLE|DIR [-rmt H]
 	OPTION:
 	    -rx     recevice
 	    -tx     send to host
 	    -n      nop
+	    -rmt    host
 	EXAMPLE
 	    $0 -tx . -n
 	EOF
     exit $1;}
     declare -a a;while [ $# -gt 0 ];do case $1 in
         -n|--nop)isnop=t;;
+        -rmt|--rmt)shift;rmt="$1";;
         *)a+=("$1")
     esac;shift;done;set -- "${a[@]}"
     [ $# -gt 0 ]||_usage 1;while [ $# -gt 0 ];do case $1 in

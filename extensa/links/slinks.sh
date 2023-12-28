@@ -40,6 +40,7 @@ _2bin "$dopt/virtualbox/virtualbox.exe"
 _2bin "$dopt/virtualbox/vboxmanage.exe"
 _2bin "$dopt/bina/psexec.sh"
 _2bin "$dopt/dotn6/dotnet.exe"
+_2bin "$dopt/x64dbg/release/x64/x64dbg.exe"
 
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
@@ -76,6 +77,9 @@ _2bin 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe'
 _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe' "$bindir/msbuild14"
 #_2bin 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe'
 _2bin 'c:\program files (x86)\microsoft visual studio\2019\enterprise\msbuild\current\bin\msbuild.exe'
+
+_2bin 'c:\program files (x86)\windows kits\10\debuggers\x64\gflags.exe'
+_2bin 'c:\program files\epic games\ue_4.26\engine\binaries\win64\unrealpak.exe'
 
 _2bin '/cygdrive/c/windows/system32/pnputil.exe'
 _2bin '/cygdrive/c/windows/system32/dism.exe'
