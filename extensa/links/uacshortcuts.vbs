@@ -20,7 +20,6 @@ progdir="D:\programs\"
 dopt="d:\opt\"
 searchdir=s.SpecialFolders("AllUsersPrograms") & "\_search\"
 
-
 Function link(f,d,n,args)
     If fso.FileExists(f) Then
         If Len(n)=0 Then n=fso.GetBaseName(f) End If
@@ -53,12 +52,15 @@ searchable(dopt & "console2\console.exe")
 searchable(dopt & "winspy\winspy.exe")
 searchable(dopt & "msiafterburner\msiafterburner.exe")
 'searchable(dopt & "rtss\rtss.exe")
+searchable(dopt & "procmon\procmon.exe")
+searchable(dopt & "ida\ida64.exe")
+searchable(dopt & "x64dbg\release\x64\x64dbg.exe")
 
 searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2.exe")
 'searchable(progdir & "redalert2\ra2md.exe")
 searchable(dopt & "charlesproxy\charles.exe")
-
+searchable("c:\program files (x86)\windows kits\10\debuggers\x64\gflags.exe")
 
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"

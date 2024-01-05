@@ -61,7 +61,8 @@ _2bin "$maintenancedir/extensa/misc/touchsh.sh" "$bindir/touchsh"
 _2bin "$maintenancedir/extensa/misc/iselevated.sh" "$bindir/iselevated"
 _2bin "$maintenancedir/extensa/patches/emacs.sh" "$bindir/emacs"
 #_2bin "$maintenancedir/patches/scriptruby.sh" "$bindir/ruby"
-_2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python"
+_2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/python3"
+_2bin "$maintenancedir/extensa/patches/scriptpython.sh" "$bindir/py2"
 _2bin "$maintenancedir/extensa/patches/virtualenv.sh" "$bindir/virtualenv"
 _2bin "$maintenancedir/backlog/virtualenv_devel/virtualenv.sh" "$bindir/virtualenv_devel"
 _2bin "$maintenancedir/backlog/msrunonstart.sh" "$bindir/msrunonstart"
@@ -78,7 +79,7 @@ _2bin 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe' "$bindir/msbuild14"
 #_2bin 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe'
 _2bin 'c:\program files (x86)\microsoft visual studio\2019\enterprise\msbuild\current\bin\msbuild.exe'
 
-_2bin 'c:\program files (x86)\windows kits\10\debuggers\x64\gflags.exe'
+#_2bin 'c:\program files (x86)\windows kits\10\debuggers\x64\gflags.exe'
 _2bin 'c:\program files\epic games\ue_4.26\engine\binaries\win64\unrealpak.exe'
 
 _2bin '/cygdrive/c/windows/system32/pnputil.exe'
