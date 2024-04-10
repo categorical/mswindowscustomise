@@ -29,6 +29,10 @@ s.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\use
 'enables msrdp to connect with en empty password
 s.RegWrite "HKLM\System\CurrentControlSet\Control\Lsa\limitblankpassworduse",0,"REG_DWORD"
 
+'adds luck to microsoft rdp client
+s.regwrite "HKLM\software\policies\microsoft\windows nt\terminal services\client\fclientdisableudp",1,"REG_DWORD"
+
+
 's.RegWrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescahealth",1,"REG_DWORD"
 'On Error Resume Next
 's.RegDelete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\hidescahealth"

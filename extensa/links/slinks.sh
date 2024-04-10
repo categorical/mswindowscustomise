@@ -117,6 +117,7 @@ _2bin "$dopt/wfreerdp/wfreerdp.exe"
 _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 
 _2bin "$maintenancedir/backlog/etrn.sh" "$bindir/etrn"
+_2bin "$maintenancedir/backlog/setdbg.sh"
 
 }
 
