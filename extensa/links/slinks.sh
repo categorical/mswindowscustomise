@@ -41,6 +41,7 @@ _2bin "$dopt/virtualbox/vboxmanage.exe"
 _2bin "$dopt/bina/psexec.sh"
 _2bin "$dopt/dotn6/dotnet.exe"
 _2bin "$dopt/x64dbg/release/x64/x64dbg.exe"
+_2bin "$dopt/appnetworkcounter/appnetworkcounter.exe"
 
 #_2bin "$progdir/python3/scripts/virtualenv.exe" "$bindir/virtualenvwin"
 #_2bin "$progdir/jdk/bin/java.exe"
