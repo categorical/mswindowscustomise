@@ -23,15 +23,15 @@ _rw(){
 }
 _rwuid(){
     local c='hklm\software\microsoft\clientfornfs\currentversion\default'
-    local b=annonymousuid
-    local r=0;reg query "$c" /v "$b" 2>/dev/null||r=$?
+    local d=annonymousuid
+    local r=0;reg query "$c" /v "$d" 2>/dev/null||r=$?
     case ${isnop-} in t)return;esac
     case ${isu-} in t)
         [ $r -eq 0 ]||return 0
-        sudo reg delete "$c" /f /v "$b"
+        sudo reg delete "$c" /f /v "$d"
         return
     esac
-    sudo reg add "$c" /f /d 1000 /t reg_dword /v "$b"
+    sudo reg add "$c" /f /d 1000 /t reg_dword /v "$d"
 }
 _nfsc(){
     local n=(
