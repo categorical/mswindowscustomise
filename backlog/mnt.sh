@@ -87,6 +87,7 @@ _ro(){
 _main(){ _usage(){ cat<<-EOF
 	SYNOPSIS:
 	    $0 --rw|--ro [-u]
+	    $0 --rwuid --nfsc
 	EOF
     exit $1;}
     declare -a a;while [ $# -gt 0 ];do case $1 in
