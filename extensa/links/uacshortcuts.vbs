@@ -42,7 +42,8 @@ End Function
 searchable(dopt & "deluge\deluge.exe")
 searchable(dopt & "npp\notepad++.exe")
 searchable(dopt & "emacs\bin\runemacs.exe")
-searchable(dopt & "mozillafirefox\firefox.exe")
+searchablenargs dopt & "mozillafirefox\firefox.exe","firefox1",""
+searchable(dopt & "firefox\firefox.exe")
 searchable(dopt & "regfromapp\regfromapp.exe")
 searchable(dopt & "sharpkeys\sharpkeys.exe")
 searchable(progdir & "wireshark\wireshark.exe")

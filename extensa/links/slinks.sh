@@ -120,6 +120,7 @@ _2bin "$optdir/mstools/installmssqlc/mssqlc" "$bindir/mssqlc"
 _2bin "$maintenancedir/backlog/etrn.sh" "$bindir/etrn"
 _2bin "$maintenancedir/backlog/setdbg.sh"
 _2bin "$dopt/sdelete/sdelete.sh"
+_2bin "$dopt/jdgui/jdgui.sh"
 
 }
 
