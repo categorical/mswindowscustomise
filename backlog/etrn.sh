@@ -12,23 +12,23 @@ declare -a pfx=(
 )
 rmt=etrn
 _rx(){ _setvar "$1"
-    local b="$out/$nam"
-    echo "[ -e '$b' ]"|ssh "$rmt" bash||_Err 'not found %s' "$b"
+    local d="$out/$nam"
+    echo "[ -e '$d' ]"|ssh "$rmt" bash||_Err 'not found %s' "$d"
     case ${isnop-} in t)return 0;esac
     rsync -rv --files-from=<(echo "$nam") "$rmt:$out/" "$dir/"
 }
 _tx(){ _setvar "$1"
-    local b="$1";[ -e "$b" ]||_Err 'not found %s' "$b"
+    local d="$1";[ -e "$d" ]||_Err 'not found %s' "$d"
     case ${isnop-} in t)return 0;esac
     rsync -rv --files-from=<(echo "$nam") "$dir/" "$rmt:$out/"
 }
 _setvar(){
     local s="$(realpath -sm "$1")"
     local u;for u in "${pfx[@]}";do
-        local c="${u%%:*}" b="${u#*:}"
+        local c="${u%%:*}" d="${u#*:}"
         case $s in $c/*)
             dir="$c"
-            out="$b"
+            out="$d"
             nam="${s#$c/}"
             declare -p dir out nam
             return
