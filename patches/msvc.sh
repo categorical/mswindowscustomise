@@ -1,40 +1,36 @@
 #!/bin/bash
+set -eu
 
 msvc='C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat'
-
 # VsDevCmd.bat:239
 # When the output is redirected, this call infests the fd longer, thus blocks.
 export VSCMD_SKIP_SENDTELEMETRY='telenimei'
-
-
 # requirements: vs_buildtools: c++: msvc 'windows 10 sdk'
-
 
 function _msvcenv()(
     msvcd=$(dirname "$msvc")
     # cd because I don't have a way to double quote spaces to cmd.
-    cd "$msvcd" \
-        && cmd /c "$(basename "$msvc") 1>&2 && printenv"
+    cd "$msvcd"
+    cmd /c "$(basename "$msvc") 1>&2&&printenv "$@""
 )
-
 function _setmsvcenv(){
-    local vs=()
-    while IFS= read -r l;do
-        vs+=("$l")
-    done < <(_msvcenv)
-    for i in "${!vs[@]}";do
-        local v=${vs[$i]}
+    local n=()
+    while IFS= read -r -d $'\0';do
+        n+=("$REPLY")
+    done < <(_msvcenv -0)
+    for i in "${!n[@]}";do
+        local v=${n[$i]}
         local k=${v%%=*};v=${v#*=}
         case $k in
             'PROMPT'*);;
             '!'*);;
             *'(x86)')
                 ;;
+            BASH_FUNC_*);;
             *)_setv "$k" "$v";;
         esac
     done
 }
-
 function _setv(){
     local v="$2"
     local k="$1"
@@ -45,23 +41,10 @@ function _setv(){
     #printf '%s=%s\n' "$k" "$v"
     export "$k"="$v"
 }
-
-
-
-_usage(){
-    cat <<-EOF
-	SYNOPSYS:
-	    $0 -h
-	    $0 --env
-	    $0
-	EOF
-
-}
-
 _ps1(){
-    cat <<-EOF
+    cat <<-1
 	PS1='\[\e]0;\w\a\]\n\[\e[36m\](msvc) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
-	EOF
+	1
 }
 _provision(){
     # n.b. --login causes .bash_profile to be read one more time:
@@ -75,14 +58,16 @@ _provision(){
     _setmsvcenv && "$@"
     fi
 }
-
-case $1 in
-    --env)_msvcenv;;
-    -h)_usage;;
-    *)_provision "$@";;
+main(){ usage(){ cat<<1
+SYNOPSIS
+    $0 --env
+    $0 -h
+    $0
+1
+exit $1;}
+case ${1-} in
+--env|-env)_msvcenv|grep -v ^LESS_TERMCAP_;;
+-h)usage 0;;
+*)_provision "$@"
 esac
-
-
-
-
-
+};main "$@"
