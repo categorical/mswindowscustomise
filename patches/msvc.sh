@@ -1,12 +1,16 @@
 #!/bin/bash
 set -eu
-
 msvc='C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat'
 # VsDevCmd.bat:239
 # When the output is redirected, this call infests the fd longer, thus blocks.
 export VSCMD_SKIP_SENDTELEMETRY='telenimei'
 # requirements: vs_buildtools: c++: msvc 'windows 10 sdk'
 
+init(){
+case ${amd64-} in t)
+msvc='C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat'
+esac
+}
 function _msvcenv()(
     msvcd=$(dirname "$msvc")
     # cd because I don't have a way to double quote spaces to cmd.
@@ -19,17 +23,12 @@ function _setmsvcenv(){
         n+=("$REPLY")
     done < <(_msvcenv -0)
     for i in "${!n[@]}";do
-        local v=${n[$i]}
-        local k=${v%%=*};v=${v#*=}
-        case $k in
-            'PROMPT'*);;
-            '!'*);;
-            *'(x86)')
-                ;;
-            BASH_FUNC_*);;
-            *)_setv "$k" "$v";;
-        esac
-    done
+    local v=${n[$i]}
+    local k=${v%%=*};v=${v#*=}
+    case $k in
+        PROMPT*|'!'*|*'(x86)'|BASH_FUNC_*);;
+        *)_setv "$k" "$v"
+    esac;done
 }
 function _setv(){
     local v="$2"
@@ -60,14 +59,16 @@ _provision(){
 }
 main(){ usage(){ cat<<1
 SYNOPSIS
-    $0 --env
+    $0 --env [-amd64]
     $0 -h
     $0
 1
 exit $1;}
+while [ $# -gt 0 ];do case $1 in
+-amd64)amd64=t;;-h)usage 0;;*)n+=("$1")
+esac;shift;done;set -- "${n[@]}";init
 case ${1-} in
 --env|-env)_msvcenv|grep -v ^LESS_TERMCAP_;;
--h)usage 0;;
 *)_provision "$@"
 esac
 };main "$@"
