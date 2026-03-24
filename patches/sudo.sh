@@ -46,7 +46,7 @@ args+=";read -t $timeoutsecs -p '$(_messagef \
 args="$(_doublequote "$args")"
 #echo "$args"
 cygstart --action=runas --wait \
-    bash --login -c "$args"
+    /usr/bin/bash --login -c "$args"
 
 
 

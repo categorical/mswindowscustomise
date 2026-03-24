@@ -121,6 +121,8 @@ _2bin "$maintenancedir/backlog/etrn.sh" "$bindir/etrn"
 _2bin "$maintenancedir/backlog/setdbg.sh"
 _2bin "$dopt/sdelete/sdelete.sh"
 _2bin "$dopt/jdgui/jdgui.sh"
+_2bin "$dopt/nu/nuget.exe"
+_2bin "$dopt/aspt/adb.exe"
 
 }
 
