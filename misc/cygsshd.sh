@@ -51,6 +51,7 @@ _esed(){ printf '%s' "$1"|sed 's/[.[\*^$/]/\\&/g';}
 _configure(){
     
     _sub '/etc/sshd_config' 'authorizedkeysfile .ssh/authorised_keys'
+    _sub '/etc/sshd_config' 'strictmodes no'
 
     _sub '/etc/ssh_config' 'hashknownhosts no'
     _sub '/etc/ssh_config' 'stricthostkeychecking no'
