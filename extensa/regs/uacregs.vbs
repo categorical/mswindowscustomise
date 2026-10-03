@@ -168,3 +168,9 @@ s.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\hubmode",1,"
 's.RegDelete "HKCU\foo\bar\qux"
 's.RegDelete "HKCU\foo\bar\"
 's.RegDelete "HKCU\foo\"
+
+
+'19041
+s.RegWrite "hklm\software\policies\microsoft\windows defender",1,"disableantispyware"
+
+
