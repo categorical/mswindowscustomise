@@ -49,7 +49,7 @@ _setelevated(){
     "$dmaintenance/winfiles/pol.sh" --restore
     "$dmaintenance/winfiles/ui.sh" --imageset
     "$dmaintenance/winfiles/ui.sh" --textset
-    "$dmaintenance/winfiles/hosts.sh" --restore
+    #"$dmaintenance/winfiles/hosts.sh" --restore
     local f="$dmaintenance/winfiles/deactivate.sh"
     if ! "$f" --activated;then "$f" --activate --yes;fi;f=
 
@@ -60,11 +60,11 @@ _setelevated(){
     
     "$dmaintenance/winfiles/msmod_ssh.sh" -s
     #"$dcustomise/extensa/misc/bcd.sh" -s -m
-    _setname
+    #_setname
 }
 
 _packages(){
-    "$dmaintenance/opt/console2.sh" --fromscratch
+    #"$dmaintenance/opt/console2.sh" --fromscratch
     "$dmaintenance/opt/portablegit.sh" --fromscratch
     "$dmaintenance/opt/font.sh" --fromscratch 
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch

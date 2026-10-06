@@ -69,6 +69,7 @@ searchable("c:\program files (x86)\windows kits\10\debuggers\x64\gflags.exe")
 
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-"
 'searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"unifont"&chr(34)&" -"
+searchablenargs "c:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"dejavu sans mono"&chr(34)&" -"
 searchablenargs "d:\cygwin64\bin\mintty.exe","mintty","-o font="&chr(34)&"dejavu sans mono"&chr(34)&" -"
 
 
