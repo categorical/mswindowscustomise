@@ -56,6 +56,7 @@ _setelevated(){
     if ! sc query cygsshd|grep -i 'running'>/dev/null;then
     "$dcustomise/misc/cygsshd.sh" --setup;fi
     "$dcustomise/misc/cygsshd.sh" --configure
+    "$dcustomise/misc/firewall.sh" --set
     
     
     "$dmaintenance/winfiles/msmod_ssh.sh" -s

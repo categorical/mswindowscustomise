@@ -171,6 +171,6 @@ s.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\hubmode",1,"
 
 
 '19041
-s.RegWrite "hklm\software\policies\microsoft\windows defender",1,"disableantispyware"
+s.RegWrite "HKLM\software\policies\microsoft\windows defender\disableantispyware",1,"REG_DWORD"
 
 
