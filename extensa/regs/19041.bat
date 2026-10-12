@@ -13,6 +13,7 @@ set "v1=hklm\software\policies\microsoft\windows defender"
 reg query "%v1%" /v disableantispyware
 reg add "%v1%" /f /t reg_dword /d 1 /v disableantispyware
 
+powercfg /h off
 
 echo [93mThe end of the script has been reached.[0m
 pause
