@@ -37,7 +37,8 @@ _set(){
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     "$dmaintenance/winfiles/timezone.sh" --set
-    
+    "$dcustomise/backlog/msnonsense.sh" -k
+ 
     _packages
     sudo "$0" --setelevated
 }
