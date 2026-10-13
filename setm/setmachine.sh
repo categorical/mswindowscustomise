@@ -5,7 +5,7 @@ _inf(){ printf '\e[36mI: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;}
 _Err(){ printf '\e[31mE: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;exit 1;}
 
 dthis=$(cd "$(dirname "$0")" && pwd)
-droot=$(cd "$dthis/.." &&pwd)
+droot=$(cd "$dthis/../.." &&pwd)
 dmaintenance="$droot/msmaintenance"
 dcustomise="$droot/mswindowscustomise"
 dcustomisex="$droot/xcustomise"
@@ -71,7 +71,8 @@ _packages(){
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
     # network access
     "$dmaintenance/opt/python3.sh" --fromscratch
-    "$dmaintenance/mozilla/install.sh" --fromscratch
+    #"$dmaintenance/mozilla/install.sh" --fromscratch
+    "$dmaintenance/opt/firefox.sh" -inst -n
     "$dmaintenance/opt/vlc.sh" --fromscratch
     
 }
