@@ -60,6 +60,7 @@ searchable(dopt & "x64dbg\release\x32\x32dbg.exe")
 searchable(dopt & "ghidra\ghidrarun.bat")
 searchable(dopt & "appnetworkcounter\appnetworkcounter.exe")
 searchable(dopt & "rdcm\rdcman.exe")
+searchable(dopt & "msys2\msys2.exe")
 
 searchable(progdir & "darkstar\darkstar.exe")
 'searchable(progdir & "redalert2\ra2.exe")
