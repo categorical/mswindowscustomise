@@ -13,6 +13,11 @@ reg query "%v1%" /v disableantispyware
 reg add "%v1%" /f /t reg_dword /d 1 /v disableantispyware
 powercfg /h off
 
+set "v1=hklm\system\currentcontrolset\control\keyboard layout"
+set "v2=0000000000000000030000005be01d001d005be000000000"
+reg add "%v1%" /f /t reg_binary /d "%v2%" /v "scancode map"
+reg query "%v1%" /v "scancode map"
+
 echo [93mThe end of the script has been reached.[0m
 pause
 goto :eof
