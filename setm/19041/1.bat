@@ -2,7 +2,7 @@
 @echo off
 call :iselevated
 
-set "v1=hklm\system\currentcontrolset\services\lanmanworkspace\parameters"
+set "v1=hklm\system\currentcontrolset\services\lanmanworkstation\parameters"
 reg query "%v1%" /v allowinsecureguestauth
 reg add "%v1%" /f /t reg_dword /d 1 /v allowinsecureguestauth
 :: gpedit
