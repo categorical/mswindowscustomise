@@ -123,6 +123,9 @@ _2bin "$dopt/sdelete/sdelete.sh"
 _2bin "$dopt/jdgui/jdgui.sh"
 _2bin "$dopt/nu/nuget.exe"
 _2bin "$dopt/aspt/adb.exe"
+_2bin "$dopt/nodejs/node.exe"
+_2bin "$dopt/nodejs/npm"
+_2bin "$dopt/nodejs/npx"
 
 }
 
