@@ -40,6 +40,7 @@ _set(){
     "$dcustomise/backlog/msnonsense.sh" -k
  
     _packages
+    "$dcustomise/backlog/ntresetgitfile.sh" -proc "$dcustomisex"
     sudo "$0" --setelevated
 }
 _setelevated(){
@@ -63,6 +64,9 @@ _setelevated(){
     "$dmaintenance/winfiles/msmod_ssh.sh" -s
     #"$dcustomise/extensa/misc/bcd.sh" -s -m
     #_setname
+    "$dcustomise/backlog/mnt.sh" --rwuid --nfsc --ro
+    "$dmaintenance/d/spice.sh" -inst -w
+    "$dmaintenance/d/spice.sh" -inst
 }
 
 _packages(){
@@ -70,6 +74,7 @@ _packages(){
     "$dmaintenance/opt/portablegit.sh" --fromscratch
     "$dmaintenance/opt/font.sh" --fromscratch 
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
+    "$dmaintenance/opt/nodejs.sh" -inst -n
     # network access
     "$dmaintenance/opt/python3.sh" --fromscratch
     #"$dmaintenance/mozilla/install.sh" --fromscratch
