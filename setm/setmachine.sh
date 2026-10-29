@@ -51,7 +51,7 @@ _setelevated(){
     "$dmaintenance/winfiles/pol.sh" --restore
     "$dmaintenance/winfiles/ui.sh" --imageset
     "$dmaintenance/winfiles/ui.sh" --textset
-    #"$dmaintenance/winfiles/hosts.sh" --restore
+    "$dmaintenance/winfiles/hosts.sh" --restore||:
     local f="$dmaintenance/winfiles/deactivate.sh"
     if ! "$f" --activated;then "$f" --activate --yes;fi;f=
 
@@ -65,8 +65,8 @@ _setelevated(){
     #"$dcustomise/extensa/misc/bcd.sh" -s -m
     #_setname
     "$dcustomise/backlog/mnt.sh" --rwuid --nfsc --ro
-    "$dmaintenance/d/spice.sh" -inst -w
-    "$dmaintenance/d/spice.sh" -inst
+    "$dmaintenance/d/spice.sh" -inst -w -n
+    "$dmaintenance/d/spice.sh" -inst -n
 }
 
 _packages(){
