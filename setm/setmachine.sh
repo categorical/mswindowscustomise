@@ -81,6 +81,7 @@ _packages(){
     #"$dmaintenance/mozilla/install.sh" --fromscratch
     "$dmaintenance/opt/firefox.sh" -inst -n
     "$dmaintenance/opt/vlc.sh" --fromscratch
+    "$dmaintenance/opt/msys2.sh" -inst -n -cfg
     
 }
 _clicking(){
