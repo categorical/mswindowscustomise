@@ -27,12 +27,12 @@ _setname(){
     [ "$(hostname)" = "$n" ]||"$dmaintenance/winfiles/sethostname.sh" "$n"
 }
 _set(){
-    
+
     "$dmaintenance/winfiles/env.sh" --set
     "$dcustomise/extensa/regs/regs.bat" 
     "$dcustomise/extensa/links/slinks.sh"
     eval "$("$dmaintenance/winfiles/env.sh" --setbash)"
-    
+
     "$dcustomise/misc/sethome.sh"
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
@@ -67,6 +67,7 @@ _setelevated(){
     "$dcustomise/backlog/mnt.sh" --rwuid --nfsc --ro
     "$dmaintenance/d/spice.sh" -inst -w -n
     "$dmaintenance/d/spice.sh" -inst -n
+    "$dmaintenance/opt/7zip.sh" -inst -n
 }
 
 _packages(){
