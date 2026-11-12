@@ -63,7 +63,8 @@ _nfsc(){
     # https://groups.google.com/g/puppet-users/c/q71sP3TZZXQ/m/nGnCM75HRrcJ
 }
 _ro(){
-    if net session&>/dev/null;then _Err 'runas';fi
+    #if net session&>/dev/null;then _Err 'runas';fi
+    if net session&>/dev/null;then runas=t;fi
 
     local s='s:'
     case ${isnop-} in t)return;esac
@@ -73,7 +74,8 @@ _ro(){
 	EOF
     )"
     case ${isu-} in t)
-        bash -c "$c";sudo bash -c "$c"
+        if [ -z "${runas-}" ];then bash -c "$c";fi
+        sudo bash -c "$c"
         return
     esac
     c="$(cat<<-EOF
@@ -81,7 +83,8 @@ _ro(){
 	net use '$s' '\\\\10.2.2.2\\b' '' /user:
 	EOF
     )"
-    bash -c "$c";sudo bash -c "$c"
+    if [ -z "${runas-}" ];then bash -c "$c";fi
+    sudo bash -c "$c"
 }
 
 _main(){ _usage(){ cat<<-EOF

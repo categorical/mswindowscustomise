@@ -75,3 +75,17 @@ reg add "hkcu\control panel\international" /f /d "HH:mm:ss" /t reg_sz /v stimefo
 set "b=hkcu\software\microsoft\windows\currentversi"
 set "b=%b%on\storagesense\parameters\storagepolicy"
 reg add "%b%" /f /d 0 /t reg_dword /v 01
+
+:: 19041
+set "p=hkcu\software\microsoft\windows\currentversion\explorer\taskband"
+reg query "%p%" /v favorites >nul 2>&1
+if not errorlevel 1 (reg delete "%p%" /f /v favorites)
+
+set "p=hkcu\software\microsoft\windows\currentversion\run"
+reg query "%p%" /v onedrive>nul 2>&1
+if not errorlevel 1 (reg delete "%p%" /f /v onedrive)
+
+
+
+
+

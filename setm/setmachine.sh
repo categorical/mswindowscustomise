@@ -5,7 +5,7 @@ _inf(){ printf '\e[36mI: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;}
 _Err(){ printf '\e[31mE: \e[0m%s\n' "$(printf "$1" "${@:2}")">&2;exit 1;}
 
 dthis=$(cd "$(dirname "$0")" && pwd)
-droot=$(cd "$dthis/.." &&pwd)
+droot=$(cd "$dthis/../.." &&pwd)
 dmaintenance="$droot/msmaintenance"
 dcustomise="$droot/mswindowscustomise"
 dcustomisex="$droot/xcustomise"
@@ -27,18 +27,20 @@ _setname(){
     [ "$(hostname)" = "$n" ]||"$dmaintenance/winfiles/sethostname.sh" "$n"
 }
 _set(){
-    
+
     "$dmaintenance/winfiles/env.sh" --set
     "$dcustomise/extensa/regs/regs.bat" 
     "$dcustomise/extensa/links/slinks.sh"
     eval "$("$dmaintenance/winfiles/env.sh" --setbash)"
-    
+
     "$dcustomise/misc/sethome.sh"
     "$dcustomisex/0scripts/homevcs/homevcs_nt.sh" --link
     "$dcustomisex/0scripts/homevcs/private.sh" --restore||:
     "$dmaintenance/winfiles/timezone.sh" --set
-    
+    "$dcustomise/backlog/msnonsense.sh" -k
+
     _packages
+    "$dcustomise/backlog/ntresetgitfile.sh" -proc "$dcustomisex"
     sudo "$0" --setelevated
 }
 _setelevated(){
@@ -49,29 +51,38 @@ _setelevated(){
     "$dmaintenance/winfiles/pol.sh" --restore
     "$dmaintenance/winfiles/ui.sh" --imageset
     "$dmaintenance/winfiles/ui.sh" --textset
-    "$dmaintenance/winfiles/hosts.sh" --restore
+    "$dmaintenance/winfiles/hosts.sh" --restore||:
     local f="$dmaintenance/winfiles/deactivate.sh"
     if ! "$f" --activated;then "$f" --activate --yes;fi;f=
 
     if ! sc query cygsshd|grep -i 'running'>/dev/null;then
     "$dcustomise/misc/cygsshd.sh" --setup;fi
     "$dcustomise/misc/cygsshd.sh" --configure
+    "$dcustomise/misc/firewall.sh" --set
     
     
     "$dmaintenance/winfiles/msmod_ssh.sh" -s
     #"$dcustomise/extensa/misc/bcd.sh" -s -m
-    _setname
+    #_setname
+    "$dcustomise/backlog/sch.sh" -kk
+    "$dcustomise/backlog/mnt.sh" --rwuid --nfsc --ro
+    "$dmaintenance/d/spice.sh" -inst -w -n
+    "$dmaintenance/d/spice.sh" -inst -n
+    "$dmaintenance/opt/7zip.sh" -inst -n
 }
 
 _packages(){
-    "$dmaintenance/opt/console2.sh" --fromscratch
+    #"$dmaintenance/opt/console2.sh" --fromscratch
     "$dmaintenance/opt/portablegit.sh" --fromscratch
     "$dmaintenance/opt/font.sh" --fromscratch 
     "$dmaintenance/opt/sharpkeys.sh" --fromscratch
+    "$dmaintenance/opt/nodejs.sh" -inst -n
     # network access
     "$dmaintenance/opt/python3.sh" --fromscratch
-    "$dmaintenance/mozilla/install.sh" --fromscratch
+    #"$dmaintenance/mozilla/install.sh" --fromscratch
+    "$dmaintenance/opt/firefox.sh" -inst -n
     "$dmaintenance/opt/vlc.sh" --fromscratch
+    "$dmaintenance/opt/msys2.sh" -inst -n -cfg
     
 }
 _clicking(){

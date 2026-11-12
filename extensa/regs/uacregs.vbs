@@ -168,3 +168,10 @@ s.RegWrite "HKLM\software\microsoft\windows\currentversion\explorer\hubmode",1,"
 's.RegDelete "HKCU\foo\bar\qux"
 's.RegDelete "HKCU\foo\bar\"
 's.RegDelete "HKCU\foo\"
+
+
+'19041
+s.RegWrite "HKLM\software\microsoft\windows\currentversion\policies\system\disableautomaticrestartsignon",1,"REG_DWORD"
+'s.RegWrite "HKLM\software\policies\microsoft\windows defender\disableantispyware",1,"REG_DWORD"
+
+

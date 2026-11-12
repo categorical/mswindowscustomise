@@ -98,7 +98,9 @@ declare -a vs=(
         
     '\Microsoft\Windows\Work Folders\Work Folders Logon Synchronization'
     '\Microsoft\Windows\Work Folders\Work Folders Maintenance Work'
- 
+
+# 19041
+'\microsoft\windows\windows defender\windows defender verification'
 )
 # https://www.tenforums.com/customization/180514-project-scheduled-tasks-can-disabled-without-drastic-impact.html
 # https://gist.github.com/IntergalacticApps/675339c2b805b4c9c6e9a442e0121b1d
